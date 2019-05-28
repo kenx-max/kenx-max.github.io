@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> jpg、gif、png和svg用于web上，我们该如何选择最合适的图像格式？ · 随记</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="web图像应用该选择哪种格式的最好？详细分析jpeg，gif，png和svg图像的差异性、适用性以及压缩方法"><meta name="keywords" content="jpeg gif png svg 图片格式 图片压缩"><meta name="author" content="daTou"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="https://datou-y.github.io/atom.xml" title="随记"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">jpg、gif、png和svg用于web上，我们该如何选择最合适的图像格式？</h1><div class="post-info">2018-06-29<p class="visit"><i data-identity="/posts/c7fb8024.html/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><p>要是问你，你知道当下都有哪些图像格式嘛？我猜你肯定说不全，因为现在图像格式真的太多了，但是应该能说出这几个常用的格式：<code>jpg</code>、<code>gif</code>、<code>png</code>和<code>svg</code>。然后我再问你，知不知道这几个格式有什么区别？各自的适用场景又是什么呢？<code>logo</code>应该是选择 <code>svg</code> 还是 <code>png</code> ？而截图是选 <code>jpg</code> 还是 <code>png</code> 好？在不生成过大文件的前提下，文件的最优质量是多少？了解每个图像格式的工作原理以及它们各自的利弊可以帮助回答这些问题。</p>
+<p>在过去几年中，数字化设计和前端开发里大量的研究和测试工具已经帮助我们搞清楚了这些问题。在本文中，我将展示一下每种格式的工作原理，它们各自的优点以及在网页使用时的压缩与保存方法。</p>
+<h2 id="先来看几个概念"><a href="#先来看几个概念" class="headerlink" title="先来看几个概念"></a>先来看几个概念</h2><ul>
+<li>有损(<code>Lossless</code>)和无损(<code>Lossy</code>)：一般我们聊到图片的时候经常会听到别人提到有损或者无损的字眼，那么什么是有损和无损呢？无损就是图片在压缩保存后虽然占用的存储更小了，但是图像的呈现质量依然如旧；而有损则是相反，图像随着一次又一次的压缩后，质量会变得越来越差。</li>
+<li>索引色(<code>Indexed color</code>)和直接色(<code>Direct color</code>)：按照不同的颜色深度可以将颜色分为索引色和直接色。索引色就是图像作者指定图片的用色总共不超过256种；而直接色则是对颜色使用没有限制，可以存在成千上万的颜色值。</li>
+<li>光栅格式(<code>raster</code>)和矢量格式(<code>vector</code>)：图像根据信息的表示方式可以分为光栅图和矢量图。光栅图也叫作位图，点阵图或者像素图，图的最小单位是由一个个带颜色的像素组合而成，在 <code>Photoshop</code> 里把图片放到最大，将看到许许多多的像素方块，所以光栅图在伸缩的时候图像可能会失真；而矢量图则是以由点、线和一些几何图形为基础，通过数学计算来排列组合而成，这种图在伸缩的时候能完好的保护质量。</li>
+</ul>
+<a id="more"></a>
+<h2 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h2><p><code>JEPG</code>由联合图像专家小组（<code>Joint Photographic Experts Group</code>）于1992年创建，并以创建者命名。<code>JPEG</code>是一种有损光栅图像格式，这意味着每次压缩保存JPEG时，一些信息将发生不可逆转地丢失；且存储的颜色无限制，这就对存储照片这种颜色非常丰富复杂的图像就很友好了。</p>
+<p>因为 <code>JPEG</code> 压缩在亮度和色彩上面的优越性，所以 <code>JPEG</code> 非常适合用于照片、色彩梯度明显的图像比如渐变和阴影这些地方。</p>
+<p><code>JPEG</code> 的压缩可以用 <code>Photoshop</code> 里存储为 <code>web</code> 格式的时候可以直接选择压缩品质，一般用于 <code>web</code> 的 <code>JPG</code> 图片选择 <code>50%-60%</code> 质量的即可，因为它兼顾不错的图像质量和较小的文件尺寸。另外也可以用在线压缩工具 <code>TinyJPG</code>。</p>
+<p>下面这个图，我用的是 <code>50%</code>的品质压缩出来的 <code>JPG</code>，很明显质量要比 <code>GIF</code> 的要好很多，而且文件尺寸也小不少。</p>
+<p><img src="../../../../images/201706/webgra_01.png" alt="webgra_01"></p>
+<blockquote>
+<p><code>JPEG</code> 和 <code>JPG</code> 的区别：<code>JPEG</code> 更多的指的是 <code>.jpg</code> 图像格式的一种压缩算法，而 <code>JPG</code> 就是一种图像存储的格式。</p>
+</blockquote>
+<h2 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h2><p>可移植网络图形（<code>Portable Network Graphics</code>）也是一种自1995年以来就一直存在的光栅图像格式。它与 <code>JPEG</code> 不同，因为它是一种无损格式，并且是目前网络上最常见的无损格式。这意味着由于它的压缩算法，当文件被保存和压缩时，不会丢失任何信息。</p>
+<h3 id="PNG格式"><a href="#PNG格式" class="headerlink" title="PNG格式"></a>PNG格式</h3><p><code>PNG</code>其实可以细分为好几个格式的，有<code>PNG 8</code>、<code>PNG 24</code>和<code>PNG 32</code>。那么怎么区分一个 <code>PNG</code> 图片是什么格式的呢？</p>
+<p><img src="../../../../images/201706/webgra_02.png" alt="png_24"></p>
+<p>打开上面这张图片的属性面板，从详细信息里看到有一个属性叫做位深度，它的值是24，那么就表示他是 <code>PNG 24</code> 格式的图片。同样，<code>PNG 8</code> 和 <code>PNG 32</code> 的位深度分别是8和32。</p>
+<blockquote>
+<p>位深度表示图像能够存储颜色的最大数值。8位就是2的8次方（2^8=256）种颜色，所以 <code>PNG 8</code> 最多只能存储256种颜色。<code>PNG 24</code> 和 <code>PNG 32</code>又叫真彩色，最多存储2的24次方种颜色，可以达到人眼分辨的极限了；<code>PNG 32</code>中剩余的8位存储的是<code>Alpha</code> 通道的透明色。</p>
+</blockquote>
+<p>然后如何生成这些不同格式的图片呢？<br>自然是用专业的图像处理软件啦，比如可以用 <code>Photoshop</code> 或者 <code>Fireworks</code>。这里以 <code>Photoshop</code> 为例子，文件-&gt;存储为 <code>Web</code> 所用格式， 可以看到下拉这里只有 <code>PNG-8</code> 和 <code>PNG-24</code>，而没有 <code>PNG-32</code> 呢？是因为 <code>Photoshop</code>不支持这个格式嘛？并不是。</p>
+<p><img src="../../../../images/201706/webgra_04.png" alt="png_generate"></p>
+<p>在 <code>Photoshop</code> 里导出 <code>PNG-32</code> 格式的图片是通过选择 <code>PNG-24</code>格式，并且勾选下面的透明度，这样生成的图片位数才是32位的，如果不勾选透明度的话就是 <code>PNG-24</code> 格式。由此看来 <code>PNG-24</code> 是不支持透明的，<code>PNG-32</code> 是支持透明的。</p>
+<h3 id="PNG透明度"><a href="#PNG透明度" class="headerlink" title="PNG透明度"></a>PNG透明度</h3><p>从 <code>Fireworks 8</code>的优化面板里可以看到 <code>PNG</code> 格式存在三种透明格式：不透明、索引透明和 <code>Alpha</code>透明。</p>
+<p><img src="../../../../images/201706/webgra_05.png" alt="png_transparency"></p>
+<ul>
+<li><p><code>PNG 8</code>透明度</p>
+<p>  从上面那个图里可以看出 <code>PNG 8</code> 是支持这三种不透明格式的。但是 <code>Photoshop</code> 只支持导出不透明和索引透明格式。在<code>Photoshop</code> 中如果选择 <code>PNG 8</code>，且勾选了透明度，那么导出的图片就是 <code>PNG 8</code> 索引透明，否则就是 <code>PNG 8</code> 不透明。</p>
+<p>  <img src="../../../../images/201706/webgra_06.png" alt="png_8_index"></p>
+<p>  用 <code>Photoshop</code> 和 <code>Fireworks 8</code> 导出 <code>PNG 8</code> 的各种格式如下所示：</p>
+<p>  <img src="../../../../images/201706/webgra_03.png" alt="png_8_transparency"></p>
+<p>  根据以上图片我们可以得出结论：</p>
+<ul>
+<li><code>Photoshop</code> 导出的 <code>PNG 8</code> 图片都带有锯齿。</li>
+<li><p><code>PNG 8</code> 索引透明都带有锯齿，且 <code>Fireworks 8</code> 导出的 <code>PNG 8</code>索引透明的锯齿是白色的。</p>
+<p>再来看看这些格式在不同浏览器下的表现情况：</p>
+<p><img src="../../../../images/201706/webgra_07.png" alt="png_8_Compatibility"></p>
+<p>根据以上图片我们可以得出结论：</p>
+</li>
+<li><p><code>PNG 8</code> 索引透明和 <code>Alpha</code> 透明都兼容<code>IE 6</code>；但美中不足的是，<code>PNG 8Alpha</code>透明在 <code>IE 6</code>下会产生锯齿。</p>
+</li>
+<li>其他格式的图片在各个浏览器下的表现一致。</li>
+<li><code>Fireworks 8</code>导出的 <code>PNG 8</code>索引透明带有白色锯齿，但是如果图片是放到白色的背景的容器下，那么这个白色锯齿就完全看不出来了，表现得和正常效果一样。</li>
+</ul>
+</li>
+<li><p><code>PNG 24</code> 和 <code>PNG 32</code></p>
+<p>  <code>PNG 24</code> 是不透明的；<code>PNG 32</code> 是支持透明的，且是 <code>Alpha</code> 透明。来看下它们在不同浏览器下的表现：</p>
+<p>  <img src="../../../../images/201706/webgra_08.png" alt="png_2432_Compatibility"></p>
+<p>  <code>PNG 32</code> 图片的透明区域在 <code>IE 6</code> 下将不再透明，而是颜色值为 <code>f0f0f0</code> 的灰色填充，在更高级版本的 <code>IE</code> 下是正常的。<code>PNG 32</code> 图片不会有锯齿。</p>
+</li>
+</ul>
+<h3 id="PNG压缩"><a href="#PNG压缩" class="headerlink" title="PNG压缩"></a>PNG压缩</h3><p>本文前面提到了 <code>JPEG</code> 在照片片这类颜色丰富的图像上的优秀表现，所以现在将它和 <code>PNG</code> 的3种格式进行对比。主要是对比压缩前后的存储体积以及表现效果等方面。用的是免费的在线压缩工具 <a href="https://tinypng.com/" target="_blank" rel="noopener">TinyPNG</a>，这个工具可以压缩 <code>JPEG</code> 和 <code>PNG</code> 格式。</p>
+<p><img src="../../../../images/201706/webgra_09.png" alt="png_jpeg"></p>
+<p>从上图这个图中，我们可以从不同角度得出一些结论：</p>
+<ul>
+<li><code>PNG 8</code> 格式的图片颜色过度处理得很突兀，能看到很明显的波浪褶皱，这就是因为它最多只能存储256种颜色导致的，所以<code>PNG 8</code>不适合用于存储颜色复杂的图像。相反，由于其相对于 <code>PNG 24</code> 或者 <code>PNG 32</code> 有先天的存储体积小优势，所以它非常适合应用于图标、颜色简单的或透明的图像上。</li>
+<li>对比100%质量的 <code>JPG</code>、55%质量的 <code>JPG</code>、<code>PNG 24</code> 和 <code>PNG 32</code>，肉眼上看他们的图像表现效果都差不多，但是各自所占用的存储空间却是差得有些离谱。压缩前，当属55%质量的 <code>JPG</code> 占用存储最小；压缩后，<code>PNG 24</code> 和 <code>PNG 32</code> 一样，会比55%质量的 <code>JPG</code> 小一些，但是由于 <code>PNG 32</code> 支持透明，所以对于颜色丰富的图像建议用 <code>PNG 32</code> 格式导出，然后用压缩工具压缩一下即可。</li>
+<li>对比压缩前后的 <code>PNG 24</code> 和 <code>PNG 32</code> 两者的存储体积相差巨大，但是表现效果却相差无几，所以用于 <code>web</code> 上的 <code>PNG 24</code> 或 <code>PNG 32</code> 图像一定要记得压缩，这对于客户端的性能优化将提供非常大的帮助。</li>
+</ul>
+<h2 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h2><p>图形交换格式（<code>Graphics Interchange Format</code>）也是一种光栅格式，最多只能存储256种颜色，支持透明度，而且在 <code>IE 6</code> 下也支持得很好，唯一美中不足的是除了 <code>Fireworks 8</code> 导出的 <code>GIF</code> 不透明格式外，所有的其他 <code>GIF</code> 格式的图片都存在锯齿。</p>
+<p><img src="../../../../images/201706/webgra_10.png" alt="gif"></p>
+<p>但是 <code>GIF</code> 也不是一无是处，最大的优点就是支持简单的动画。如下面简单的交通灯动画：</p>
+<p><img src="../../../../images/201706/traffic-light.gif" alt="gif_ani"></p>
+<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><p>可伸缩矢量图形（<code>Scalable Vector Graphics</code>），顾名思义它是矢量的，而非光栅格式。区别于光栅格式的依靠像素点来存储图像，矢量图是通过XML格式来数据化的记录图像的信息。所以 <code>SVG</code> 相对于光栅格式的图像具有以下优势：</p>
+<ul>
+<li>任意伸缩图像，而不会破坏图像的清晰度和细节。</li>
+<li>完全支持 <code>DOM</code>，以及 <code>JavaScript</code> 能够很好的访问到它。</li>
+<li>总体来讲，<code>SVG</code>的文件会比 <code>GIF</code> 或 <code>JPG</code> 的会小很多。</li>
+</ul>
+<p>就像其它矢量格式，<code>SVG</code> 图片能不丢失任何细节地放大到任何大小。打个比方，同一个图标，可以以多种尺寸使用，并且在任何屏幕分辨率（比如 <code>Retina</code> 显示器）中都将看起来很清晰，而不需要存成多个文件。比如下面这个这个图对比，右边的是矢量图，左边的是其他格式图片：</p>
+<p><img src="../../../../images/201706/webgra_11.png" alt="svg"></p>
+<h2 id="SVG用途"><a href="#SVG用途" class="headerlink" title="SVG用途"></a>SVG用途</h2><p><code>SVG</code> 在线条艺术，<code>LOGO</code>，图标，插画和数据可视化方面用途广泛。但它不适用于写实图像和有许多细节的复杂图片。在一些情况下，<code>SVG</code> 和 <code>PNG</code> 都能很好地达到同一个目的。对于线条艺术，<code>SVG</code> 通常能生成较小的文件。但是这不是必然的，实际情况会根据矢量图像究竟有多少个锚点，它甚至可能会生成比PNG更大的文件。 <code>SVG</code> 真正出色的地方是数据可视化。由于可以使用<code>JavaScript</code> 来操纵和创建矢量动画，诸如 <code>D3</code> 之类的库提供了无限的可能性。<code>LOGO</code>, 图标和数据可视化是 <code>SVG</code> 使用的优秀范例。</p>
+<p><img src="../../../../images/201706/webgra_12.png" alt="svg_use"></p>
+<h2 id="SVG压缩"><a href="#SVG压缩" class="headerlink" title="SVG压缩"></a>SVG压缩</h2><p>比较好的 <code>SVG</code> 方法应该是通过清除 <code>SVG</code> 矢量图形中不必要的锚点、元素和属性来减少文件大小。锚点绘制了矢量图像，因此，你需要确保已移除的锚点不会影响矢量图形的最终形状。如果您使用 <code>Adobe Illustrator</code> 编辑 <code>SVG</code>，请确保使用导 -&gt; 导出为，而不是文件 -&gt; 另存为进行保存，因为这样才能生成一个最小化的文件。</p>
+<p><img src="../../../../images/201706/webgra_13.png" alt="svg_compress"> </p>
+<p>清理不必要的节点是缩减 <code>SVG</code> 尺寸的一种途径。<br>元素标签是包含在 <code>SVG</code> 文件内的所有内容，包括开始和结束标签。<br>矢量编辑软件，如 <code>Adobe Illustrator</code> 和 <code>Sketch</code> 可能会到处含有非必要元素和属性的 <code>SVG</code> 。<br><code>SVG</code> 压缩器可用于删除这种多余的信息。<code>Compresso</code> 和 <code>SVGOMG</code> 等在线工具可以完成此工作。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://web.jobbole.com/91599/" target="_blank" rel="noopener">在网页上使用JPG、PNG和SVG：新手指南</a></li>
+<li><a href="http://www.cnblogs.com/PeunZhang/archive/2013/05/30/3050394.html" target="_blank" rel="noopener">PNG使用技巧</a></li>
+<li><a href="https://stackoverflow.com/questions/2336522/png-vs-gif-vs-jpeg-vs-svg-when-best-to-use" target="_blank" rel="noopener">PNG vs. GIF vs. JPEG vs. SVG - When best to use?</a></li>
+<li><a href="https://www.sitepoint.com/gif-png-jpg-which-one-to-use/" target="_blank" rel="noopener">JPG vs PNG vs GIF vs SVG – What is the Difference?</a></li>
+</ul>
+</div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/posts/d7262aae.html/" title="chrome开发者工具实用小技巧" class="next">下一篇</a></div><a href="#comment" class="comment-anchor"></a><div id="vcomments"></div><script>new Valine({
+    el: "#vcomments",
+    appId: "zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz",
+    appKey: "3KpMWljrncl7SfARIGQwPNxh",
+    notify: false,
+    verify: false,
+    avatar: "robohash",
+    visitor: true,
+    placeholder: "随便说点什么～.～",
+});</script><div class="copyright"><p>© 2018 - 2019 <a target="_blank">daTou</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz", "3KpMWljrncl7SfARIGQwPNxh");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
+
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
+
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
+
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
+
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
+
+const calcAndWriteTimes = () => {
+let isPost = true;
+
+let timerAllDOM = document.querySelectorAll(".article-timer");
+
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
+
+let timerDOMCache = {};
+
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
+
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
+
+if(true){
+calcAndWriteTimes();
+}</script></body></html>
