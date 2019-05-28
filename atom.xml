@@ -18,8 +18,8 @@
   
   <entry>
     <title>jpg、gif、png和svg用于web上，我们该如何选择最合适的图像格式？</title>
-    <link href="https://datou-y.github.io//posts/c7fb8024.html/"/>
-    <id>https://datou-y.github.io//posts/c7fb8024.html/</id>
+    <link href="https://datou-y.github.io/posts/c7fb8024.html/"/>
+    <id>https://datou-y.github.io/posts/c7fb8024.html/</id>
     <published>2018-06-29T03:19:21.000Z</published>
     <updated>2019-05-28T02:26:42.706Z</updated>
     
@@ -48,8 +48,8 @@
   
   <entry>
     <title>chrome开发者工具实用小技巧</title>
-    <link href="https://datou-y.github.io//posts/d7262aae.html/"/>
-    <id>https://datou-y.github.io//posts/d7262aae.html/</id>
+    <link href="https://datou-y.github.io/posts/d7262aae.html/"/>
+    <id>https://datou-y.github.io/posts/d7262aae.html/</id>
     <published>2018-06-15T10:20:21.000Z</published>
     <updated>2019-05-28T01:54:06.744Z</updated>
     
@@ -71,8 +71,8 @@
   
   <entry>
     <title>hexo主题的安装和使用</title>
-    <link href="https://datou-y.github.io//posts/4a1d4f4f.html/"/>
-    <id>https://datou-y.github.io//posts/4a1d4f4f.html/</id>
+    <link href="https://datou-y.github.io/posts/4a1d4f4f.html/"/>
+    <id>https://datou-y.github.io/posts/4a1d4f4f.html/</id>
     <published>2018-06-04T07:20:21.000Z</published>
     <updated>2019-05-28T03:42:57.911Z</updated>
     
@@ -95,12 +95,12 @@
   
   <entry>
     <title>hexo-abbrlink插件使用</title>
-    <link href="https://datou-y.github.io//posts/32d54ad4.html/"/>
-    <id>https://datou-y.github.io//posts/32d54ad4.html/</id>
+    <link href="https://datou-y.github.io/posts/32d54ad4.html/"/>
+    <id>https://datou-y.github.io/posts/32d54ad4.html/</id>
     <published>2018-06-01T06:20:21.000Z</published>
-    <updated>2019-05-28T02:43:20.824Z</updated>
+    <updated>2019-05-28T08:33:47.937Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一个<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">Hexo plugin</a>基于文章标题用来生成静态文章链接。查看官方文档<a href="https://github.com/rozbo/hexo-abbrlink" target="_blank" rel="noopener">hexo-abbrlink</a>获得详细使用信息</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="How-to-install"><a href="#How-to-install" class="headerlink" title="How to install"></a>How to install</h3><p>Add plugin to Hexo:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></p><h3 id="Modify-permalink-in-config-yml-file"><a href="#Modify-permalink-in-config-yml-file" class="headerlink" title="Modify permalink in config.yml file:"></a>Modify permalink in config.yml file:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: /posts/:abbrlink.html/</span><br></pre></td></tr></table></figure><h3 id="There-are-two-settings"><a href="#There-are-two-settings" class="headerlink" title="There are two settings:"></a>There are two settings:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alg -- Algorithm (currently support crc16 and crc32, which crc16 is default)</span><br><span class="line">rep -- Represent (the generated link could be presented in hex or dec value)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># abbrlink config</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32  #support crc16(default) and crc32</span><br><span class="line">  rep: hex    #support dec(default) and hex</span><br></pre></td></tr></table></figure><h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><p>The generated link will look like the following:</p><blockquote><p>crc16 &amp; hex<br><a href="https://post.zz173.com/posts/66c8.html" target="_blank" rel="noopener">https://post.zz173.com/posts/66c8.html</a><br>crc16 &amp; dec<br><a href="https://post.zz173.com/posts/65535.html" target="_blank" rel="noopener">https://post.zz173.com/posts/65535.html</a></p></blockquote><blockquote><p>crc32 &amp; hex<br><a href="https://post.zz173.com/posts/8ddf18fb.html" target="_blank" rel="noopener">https://post.zz173.com/posts/8ddf18fb.html</a><br>crc32 &amp; dec<br><a href="https://post.zz173.com/posts/1690090958.html" target="_blank" rel="noopener">https://post.zz173.com/posts/1690090958.html</a></p></blockquote><h2 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h2><p>Maximum number of posts is 65535 for crc16. (For a personal blog site, this number is decent)</p><h2 id="More-info"><a href="#More-info" class="headerlink" title="More info"></a>More info</h2><p>see  <a href="https://post.zz173.com/detail/hexo-abbrlink.html" target="_blank" rel="noopener">this</a>(Chinese)</p><h2 id="ThanksFor"><a href="#ThanksFor" class="headerlink" title="ThanksFor"></a>ThanksFor</h2><p><a href="https://github.com/NoahDragon" target="_blank" rel="noopener">NoahDragon</a></p>]]></content>
+    <content type="html"><![CDATA[<p>这是一个<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">Hexo plugin</a>基于文章标题用来生成静态文章链接。查看官方文档<a href="https://github.com/rozbo/hexo-abbrlink" target="_blank" rel="noopener">hexo-abbrlink</a>获得详细使用信息</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="How-to-install"><a href="#How-to-install" class="headerlink" title="How to install"></a>How to install</h3><p>Add plugin to Hexo:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></p><h3 id="Modify-permalink-in-config-yml-file"><a href="#Modify-permalink-in-config-yml-file" class="headerlink" title="Modify permalink in config.yml file:"></a>Modify permalink in config.yml file:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: posts/:abbrlink.html/</span><br></pre></td></tr></table></figure><h3 id="There-are-two-settings"><a href="#There-are-two-settings" class="headerlink" title="There are two settings:"></a>There are two settings:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alg -- Algorithm (currently support crc16 and crc32, which crc16 is default)</span><br><span class="line">rep -- Represent (the generated link could be presented in hex or dec value)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># abbrlink config</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32  #support crc16(default) and crc32</span><br><span class="line">  rep: hex    #support dec(default) and hex</span><br></pre></td></tr></table></figure><h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><p>The generated link will look like the following:</p><blockquote><p>crc16 &amp; hex<br><a href="https://post.zz173.com/posts/66c8.html" target="_blank" rel="noopener">https://post.zz173.com/posts/66c8.html</a><br>crc16 &amp; dec<br><a href="https://post.zz173.com/posts/65535.html" target="_blank" rel="noopener">https://post.zz173.com/posts/65535.html</a></p></blockquote><blockquote><p>crc32 &amp; hex<br><a href="https://post.zz173.com/posts/8ddf18fb.html" target="_blank" rel="noopener">https://post.zz173.com/posts/8ddf18fb.html</a><br>crc32 &amp; dec<br><a href="https://post.zz173.com/posts/1690090958.html" target="_blank" rel="noopener">https://post.zz173.com/posts/1690090958.html</a></p></blockquote><h2 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h2><p>Maximum number of posts is 65535 for crc16. (For a personal blog site, this number is decent)</p><h2 id="More-info"><a href="#More-info" class="headerlink" title="More info"></a>More info</h2><p>see  <a href="https://post.zz173.com/detail/hexo-abbrlink.html" target="_blank" rel="noopener">this</a>(Chinese)</p><h2 id="ThanksFor"><a href="#ThanksFor" class="headerlink" title="ThanksFor"></a>ThanksFor</h2><p><a href="https://github.com/NoahDragon" target="_blank" rel="noopener">NoahDragon</a></p>]]></content>
     
     <summary type="html">
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>快速、简洁且高效的博客框架Hexo</title>
-    <link href="https://datou-y.github.io//posts/4a17b156.html/"/>
-    <id>https://datou-y.github.io//posts/4a17b156.html/</id>
+    <link href="https://datou-y.github.io/posts/4a17b156.html/"/>
+    <id>https://datou-y.github.io/posts/4a17b156.html/</id>
     <published>2018-05-30T10:20:21.000Z</published>
     <updated>2019-05-28T07:56:18.352Z</updated>
     
