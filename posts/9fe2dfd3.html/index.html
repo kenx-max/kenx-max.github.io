@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> 防止表单重复提交的多种策略手段 · 随记</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="防止表单重复提交的多种策略手段 - daTou"><meta name="keywords" content="datou，博客，java，随记，web"><meta name="author" content="daTou"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="https://datou-y.github.io/atom.xml" title="随记"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">防止表单重复提交的多种策略手段</h1><div class="post-info">2019-01-10<p class="visit"><i data-identity="posts/9fe2dfd3.html/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><p>在平时开发中，如果网速比较慢的情况下，用户提交表单后，发现服务器半天都没有响应，那么用户可能会以为是自己没有提交表单，就会再点击提交按钮重复提交表单，或者网页被恶意刷新，致使同一条记录重复插入到数据库中，我们在开发中必须防止表单重复提交。</p>
+<h2 id="问题再现"><a href="#问题再现" class="headerlink" title="问题再现"></a>问题再现</h2><ul>
+<li>场景一：在网络延迟的情况下让用户有时间点击多次submit按钮导致表单重复提交</li>
+<li>场景二：表单提交后用户点击【刷新】按钮导致表单重复提交</li>
+<li>场景三：用户提交表单后，点击浏览器的【后退】按钮回退到表单页面后进行再次提交</li>
+<li>场景四：使用浏览器历史记录重复提交表单。<a id="more"></a>
+</li>
+</ul>
+<h2 id="问题方案"><a href="#问题方案" class="headerlink" title="问题方案"></a>问题方案</h2><h3 id="利用JavaScript防止表单重复提交"><a href="#利用JavaScript防止表单重复提交" class="headerlink" title="利用JavaScript防止表单重复提交"></a>利用JavaScript防止表单重复提交</h3><ol>
+<li><p>表单提交之后，将提交按钮设置为不可用，让用户没有机会点击第二次提交按钮</p>
+</li>
+<li><p>用JavaScript控制Form表单只能提交一次阻止submit提交事件第二次提交</p>
+</li>
+<li><p>另外还有一种做法就是提交表单后，将提交按钮隐藏起来，这种做法和将提交按钮设置为不可用是差不多的，个人觉得将提交按钮隐藏影响到页面布局的美观，并且可能会让用户误以为是bug(怎么我一点击按钮，按钮就不见了呢？用户可能会有这样的疑问)，我个人在开发中用得比较多的是表单提交后，将提交按钮设置为不可用，反正使用JavaScript防止表单重复提交的做法都是差不多的，目的都是让表单只能提交一次，这样就可以做到表单不重复提交了。</p>
+</li>
+</ol>
+<div class="tip"><br>    使用JavaScript防止表单重复提交的做法只对上述提交到导致表单重复提交的三种场景中的【场景一】有效，而对于【场景二】和【场景三】是没有用，依然无法解决表单重复提交问题<br></div>
+
+<h3 id="利用Session防止表单重复提交"><a href="#利用Session防止表单重复提交" class="headerlink" title="利用Session防止表单重复提交"></a>利用Session防止表单重复提交</h3><blockquote>
+<p>对于【场景二】和【场景三】导致表单重复提交的问题，既然客户端无法解决，那么就在服务器端解决，在服务器端解决就需要用到<code>session</code>了。</p>
+</blockquote>
+<p>在服务器端，生成一个唯一的标识符，将它存入session，并且返回给前端，然后将表单页面发给浏览器，用户录入信息后点击提交，在服务器端，获取表单中隐藏字段的值，与session中的唯一标识符比较，相等说明是首次提交，就处理本次请求，然后将session中的唯一标识符移除；不相等说明是重复提交，就不再处理。</p>
+<h3 id="通过重定向实现"><a href="#通过重定向实现" class="headerlink" title="通过重定向实现"></a>通过重定向实现</h3><p>当用户提交表单，服务器端处理后立即转向其他的页面</p>
+<h3 id="使用Cookie处理"><a href="#使用Cookie处理" class="headerlink" title="使用Cookie处理"></a>使用Cookie处理</h3><p>使用Cookie记录表单提交的状态，根据其状态可以检查是否已经提交表单，</p>
+<h3 id="在数据库里添加约束"><a href="#在数据库里添加约束" class="headerlink" title="在数据库里添加约束"></a>在数据库里添加约束</h3><p>在数据库里添加唯一约束或创建唯一索引，防止出现重复数据</p>
+<h3 id="对表单提交数据进行检验"><a href="#对表单提交数据进行检验" class="headerlink" title="对表单提交数据进行检验"></a>对表单提交数据进行检验</h3><p>检查表单的数据是否重复或者是否符合提交要求</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://www.cnblogs.com/myon/p/6636934.html" target="_blank" rel="noopener">防止表单重复提交的八种简单有效的策略</a></li>
+<li><a href="https://www.cnblogs.com/xdp-gacl/p/3859416.html" target="_blank" rel="noopener">表单重复提交的常见应用场景</a></li>
+</ul>
+</div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/posts/1077e6d7.html/" title="mysql复杂的sql语句查询案例之GROUP BY系列" class="prev">上一篇</a><a href="/posts/c7fb8024.html/" title="jpg、gif、png和svg用于web上，我们该如何选择最合适的图像格式？" class="next">下一篇</a></div><a href="#comment" class="comment-anchor"></a><div id="vcomments"></div><script>new Valine({
+    el: "#vcomments",
+    appId: "zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz",
+    appKey: "3KpMWljrncl7SfARIGQwPNxh",
+    notify: false,
+    verify: false,
+    avatar: "robohash",
+    visitor: true,
+    placeholder: "随便说点什么～.～",
+});</script><div class="copyright"><p>© 2018 - 2019 <a target="_blank">daTou</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz", "3KpMWljrncl7SfARIGQwPNxh");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
+
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
+
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
+
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
+
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
+
+const calcAndWriteTimes = () => {
+let isPost = true;
+
+let timerAllDOM = document.querySelectorAll(".article-timer");
+
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
+
+let timerDOMCache = {};
+
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
+
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
+
+if(true){
+calcAndWriteTimes();
+}</script></body></html>

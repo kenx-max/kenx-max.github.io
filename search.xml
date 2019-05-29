@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>mysql复杂的sql语句查询案例之GROUP BY系列</title>
+      <link href="/posts/1077e6d7.html/"/>
+      <url>/posts/1077e6d7.html/</url>
+      
+        <content type="html"><![CDATA[<p>sql语句高效是决定程序运行是否流程，稳定，快速的一个重要标准。在开发项目中我们往往忽略了sql语句的重要性，作为后端人员sql语句还是非常重要的。</p><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>GROUP BY我们可以先从字面上来理解，GROUP表示分组，BY后面写字段名，就表示根据哪个字段进行分组，</p><p><div class="tip"><br>    GROUP BY必须得配合聚合函数来用,聚合后的表其他列不能再select查询项中<br></div><br>分组之后你可以计数（COUNT），求和（SUM），求平均数（AVG）等。</p><a id="more"></a><h2 id="常用的聚合函数"><a href="#常用的聚合函数" class="headerlink" title="常用的聚合函数"></a>常用的聚合函数</h2><ul><li>count() 计数</li><li>sum() 求和</li><li>avg() 平均数</li><li>max() 最大值</li><li>min() 最小值</li></ul><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, aggregate_function(column_name)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">operator</span> <span class="keyword">value</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name;</span><br></pre></td></tr></table></figure><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="学生信息"><a href="#学生信息" class="headerlink" title="学生信息"></a>学生信息</h3><p>班级表<br><img src="https://ae01.alicdn.com/kf/HTB1_FB2aMKG3KVjSZFL761MvXXab.png" alt><br>学生表<br><img src="https://ae01.alicdn.com/kf/HTB1uqh3aLWG3KVjSZPc762kbXXa0.png" alt><br>成绩表<br><img src="https://ae01.alicdn.com/kf/HTB1HAB4aROD3KVjSZFF763n9pXaZ.png" alt></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://www.jianshu.com/p/8b135d373df1" target="_blank" rel="noopener">SQL中GROUP BY用法示例</a></li><li><a href="https://blog.csdn.net/zhu940923/article/details/81084080" target="_blank" rel="noopener">查询每班分数最高的学生</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>防止表单重复提交的多种策略手段</title>
+      <link href="/posts/9fe2dfd3.html/"/>
+      <url>/posts/9fe2dfd3.html/</url>
+      
+        <content type="html"><![CDATA[<p>在平时开发中，如果网速比较慢的情况下，用户提交表单后，发现服务器半天都没有响应，那么用户可能会以为是自己没有提交表单，就会再点击提交按钮重复提交表单，或者网页被恶意刷新，致使同一条记录重复插入到数据库中，我们在开发中必须防止表单重复提交。</p><h2 id="问题再现"><a href="#问题再现" class="headerlink" title="问题再现"></a>问题再现</h2><ul><li>场景一：在网络延迟的情况下让用户有时间点击多次submit按钮导致表单重复提交</li><li>场景二：表单提交后用户点击【刷新】按钮导致表单重复提交</li><li>场景三：用户提交表单后，点击浏览器的【后退】按钮回退到表单页面后进行再次提交</li><li>场景四：使用浏览器历史记录重复提交表单。<a id="more"></a></li></ul><h2 id="问题方案"><a href="#问题方案" class="headerlink" title="问题方案"></a>问题方案</h2><h3 id="利用JavaScript防止表单重复提交"><a href="#利用JavaScript防止表单重复提交" class="headerlink" title="利用JavaScript防止表单重复提交"></a>利用JavaScript防止表单重复提交</h3><ol><li><p>表单提交之后，将提交按钮设置为不可用，让用户没有机会点击第二次提交按钮</p></li><li><p>用JavaScript控制Form表单只能提交一次阻止submit提交事件第二次提交</p></li><li><p>另外还有一种做法就是提交表单后，将提交按钮隐藏起来，这种做法和将提交按钮设置为不可用是差不多的，个人觉得将提交按钮隐藏影响到页面布局的美观，并且可能会让用户误以为是bug(怎么我一点击按钮，按钮就不见了呢？用户可能会有这样的疑问)，我个人在开发中用得比较多的是表单提交后，将提交按钮设置为不可用，反正使用JavaScript防止表单重复提交的做法都是差不多的，目的都是让表单只能提交一次，这样就可以做到表单不重复提交了。</p></li></ol><div class="tip"><br>    使用JavaScript防止表单重复提交的做法只对上述提交到导致表单重复提交的三种场景中的【场景一】有效，而对于【场景二】和【场景三】是没有用，依然无法解决表单重复提交问题<br></div><h3 id="利用Session防止表单重复提交"><a href="#利用Session防止表单重复提交" class="headerlink" title="利用Session防止表单重复提交"></a>利用Session防止表单重复提交</h3><blockquote><p>对于【场景二】和【场景三】导致表单重复提交的问题，既然客户端无法解决，那么就在服务器端解决，在服务器端解决就需要用到<code>session</code>了。</p></blockquote><p>在服务器端，生成一个唯一的标识符，将它存入session，并且返回给前端，然后将表单页面发给浏览器，用户录入信息后点击提交，在服务器端，获取表单中隐藏字段的值，与session中的唯一标识符比较，相等说明是首次提交，就处理本次请求，然后将session中的唯一标识符移除；不相等说明是重复提交，就不再处理。</p><h3 id="通过重定向实现"><a href="#通过重定向实现" class="headerlink" title="通过重定向实现"></a>通过重定向实现</h3><p>当用户提交表单，服务器端处理后立即转向其他的页面</p><h3 id="使用Cookie处理"><a href="#使用Cookie处理" class="headerlink" title="使用Cookie处理"></a>使用Cookie处理</h3><p>使用Cookie记录表单提交的状态，根据其状态可以检查是否已经提交表单，</p><h3 id="在数据库里添加约束"><a href="#在数据库里添加约束" class="headerlink" title="在数据库里添加约束"></a>在数据库里添加约束</h3><p>在数据库里添加唯一约束或创建唯一索引，防止出现重复数据</p><h3 id="对表单提交数据进行检验"><a href="#对表单提交数据进行检验" class="headerlink" title="对表单提交数据进行检验"></a>对表单提交数据进行检验</h3><p>检查表单的数据是否重复或者是否符合提交要求</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://www.cnblogs.com/myon/p/6636934.html" target="_blank" rel="noopener">防止表单重复提交的八种简单有效的策略</a></li><li><a href="https://www.cnblogs.com/xdp-gacl/p/3859416.html" target="_blank" rel="noopener">表单重复提交的常见应用场景</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> web综合 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> form </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>jpg、gif、png和svg用于web上，我们该如何选择最合适的图像格式？</title>
       <link href="/posts/c7fb8024.html/"/>
       <url>/posts/c7fb8024.html/</url>
