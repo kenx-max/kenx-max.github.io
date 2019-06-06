@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> java中map字典用法和详细实例 · 随记</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="java中map字典用法和详细实例 - daTou"><meta name="keywords" content="datou，博客，java，随记，web"><meta name="author" content="daTou"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="https://datou-y.github.io/atom.xml" title="随记"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">java中map字典用法和详细实例</h1><div class="post-info">2019-06-05<p class="visit"><i data-identity="posts/f2f0bf25.html/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><p>HashMap字典用于存放键值对，<code>&lt;key,value&gt;</code>，通过key来查找value,顾名思义key不能为空，唯一且不重复，不然底层怎么查呢！<br><img src="https://ae01.alicdn.com/kf/HTB1cDhBbUGF3KVjSZFo762mpFXaS.png" alt><br><a id="more"></a></p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://ae01.alicdn.com/kf/HTB1TzFBbMmH3KVjSZKz7622OXXas.png" alt></p>
+<h3 id="map创建"><a href="#map创建" class="headerlink" title="map创建"></a>map创建</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">Map&lt;String, Integer&gt; map = Hashtable&lt;String, Integer&gt;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>HashMap</code>底层是哈希表数据结构，线程是不同步的也就是线程不安全的，可以存入null键，null值。要保证键的唯一性，需要覆盖hashCode方法，和equals方法</li>
+<li><p><code>TreeMap</code>TreeMap可以对集合中的键进行排序</p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">map.put(<span class="string">"tom"</span>,<span class="number">22</span>);</span><br><span class="line">map.put(<span class="string">"jack"</span>,<span class="number">33</span>);</span><br><span class="line">map.put(<span class="string">"tom"</span>,<span class="number">23</span>);</span><br><span class="line"><span class="keyword">for</span> (String key : map.keySet()) &#123;</span><br><span class="line">        System.out.println(map.get(key));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>put()</code>方法在没有hashCode和equals方式   添加重复的键值（值不同）,会覆盖掉前面key值相同的值</p>
+</li>
+</ul>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">map.remove(<span class="string">"tom"</span>);</span><br><span class="line">map.clear();  </span><br><span class="line">map.remove(<span class="string">"tom"</span>,<span class="number">22</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>clear()</code>方法清空集合对象  </li>
+<li><code>remove()</code>方法指定key，返回删除的键值对映射的值如果key不存在删除失败，返回null<br>如果同时指定了key，和value删除成功返回true，否则返回false</li>
+</ul>
+<h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map.size()</span><br><span class="line">map.get(<span class="string">"toms"</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>size()</code>方法获取容器大小,从1开始计算，集合索引从0开始计算</li>
+<li><code>get()</code>方法指定key，获取对应键值，如果key不存在返回null</li>
+</ul>
+<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">map.isEmpty()</span><br><span class="line">map.containsKey(<span class="string">"toms"</span>)</span><br><span class="line">map.containsValue(<span class="number">11</span>)</span><br><span class="line">Set&lt;String&gt; key = map.keySet();</span><br><span class="line"><span class="keyword">for</span>(String s:key)&#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Collection&lt;Integer&gt; S=map.values();</span><br><span class="line"><span class="keyword">for</span>(Integer s:S)&#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Set&lt;Map.Entry&lt;String,Integer&gt;&gt; es=map.entrySet();</span><br><span class="line"><span class="keyword">for</span>(Map.Entry e:es)&#123;</span><br><span class="line">    System.out.println(e.getKey());</span><br><span class="line">    System.out.println(e.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>boolean isEmpty()</code>方法判断集合是否为空   长度为0返回true否则false </li>
+<li><code>boolean containsKey(Object key)</code> 判断集合中是否包含指定的key </li>
+<li><code>boolean containsValue(Object value)</code>判断集合中是否包含指定的value</li>
+<li><code>Set keySet()</code>方法获取所有的key返回一个<code>Set</code>集合</li>
+<li><code>Collection values()</code>方法获取所有的值返回一个<code>Collection</code>集合</li>
+<li><code>entrySet()</code> 方法获取map所有实体<code>Set</code>集合包含键和值</li>
+</ul>
+<h2 id="Map遍历"><a href="#Map遍历" class="headerlink" title="Map遍历"></a>Map遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">map.put(<span class="string">"tom"</span>, <span class="number">22</span>);</span><br><span class="line">map.put(<span class="string">"jack"</span>, <span class="number">33</span>);</span><br><span class="line">map.put(<span class="string">"kom"</span>, <span class="number">23</span>);</span><br></pre></td></tr></table></figure>
+<p>通过<code>keySet()</code> 获取key  通过key 找到value<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(String key:map.keySet())&#123;</span><br><span class="line">    System.out.println(map.get(key));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>Map.Entry(String,Integer)</code> 获取，然后使用<code>entry.getKey()</code>获取到键，通过<code>entry.getValue()</code>获取到值<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Map.Entry e:map.entrySet())&#123;</span><br><span class="line">    System.out.println(e.getValue());</span><br><span class="line">    System.out.println(e.getKey());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>只遍历键或者值，通过增强for循环<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(String key:map.keySet())&#123;</span><br><span class="line">    System.out.println(key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(Integer a:map.values())&#123;</span><br><span class="line">    System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>Iterator</code>迭代器来遍历通过<code>getKey</code>获取所有键<code>getValue</code>获取所有值<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,Integer&gt;&gt; it= map.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">    Map.Entry&lt;String,Integer&gt; next=it.next();</span><br><span class="line">    String key=next.getKey();</span><br><span class="line">    Integer v=next.getValue();</span><br><span class="line">    System.out.println(<span class="string">"key"</span>+key+<span class="string">"value"</span>+v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Map合并"><a href="#Map合并" class="headerlink" title="Map合并"></a>Map合并</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">map.put(<span class="string">"tom"</span>, <span class="number">22</span>);</span><br><span class="line">map.put(<span class="string">"jack"</span>, <span class="number">33</span>);</span><br><span class="line">map.put(<span class="string">"kom"</span>, <span class="number">23</span>);</span><br><span class="line">Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">map1.put(<span class="string">"t"</span>, <span class="number">21</span>);</span><br><span class="line">map1.put(<span class="string">"g"</span>, <span class="number">2</span>);</span><br><span class="line">map.putAll(map1);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String key : map.keySet()) &#123;</span><br><span class="line">    System.out.println(map.get(key));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>putAll()</code>方法可以接收另一个<code>Map</code>让两个集合合并为一个<br><div class="tip"><br><code>Set</code>的元素不可重复，<code>Map</code>的键不可重复<br><code>Set</code>元素重复元素不能存入add方法返回<code>false</code><br><code>Map</code>的重复健将覆盖旧键，将旧值返回。</div></li>
+</ul>
+<h2 id="fail-fast-快速失败-机制"><a href="#fail-fast-快速失败-机制" class="headerlink" title="fail-fast (快速失败)机制"></a>fail-fast (快速失败)机制</h2><blockquote>
+<p>在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出ConcurrentModificationException</p>
+</blockquote>
+<p>增加<code>for</code>循环进行遍历新增,删除操作会触发<code>fail-fast</code>机制，修改也就是覆盖不会触发<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(String key:map.keySet())&#123;</span><br><span class="line">    map.put(<span class="string">"jack"</span>,<span class="number">222</span>);</span><br><span class="line">    map.put(<span class="string">"s"</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span>(key.equals(<span class="string">"jack"</span>))&#123;</span><br><span class="line">        map.remove(<span class="string">"jack"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用迭代器迭<code>Iterator</code>迭代时候迭代器删除不会触发<code>fail-fast</code>机制只有新增会触发<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,Integer&gt;&gt; it=map.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">    Map.Entry&lt;String,Integer&gt; s=it.next();</span><br><span class="line">    String key=s.getKey();</span><br><span class="line">    Integer value=s.getValue();</span><br><span class="line">    map.put(<span class="string">"s"</span>,<span class="number">1</span>);</span><br><span class="line">    map.put(<span class="string">"tom"</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(key.equals(<span class="string">"jack"</span>))&#123;</span><br><span class="line">        it.remove();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://blog.csdn.net/qq_26807245/article/details/82178882#12-set" target="_blank" rel="noopener">Java集合类详解</a></li>
+<li><a href="https://www.cnblogs.com/douyu2580860/p/8358768.html" target="_blank" rel="noopener">java基础集合简介Map（三）下</a></li>
+</ul>
+</div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/posts/425444d1.html/" title="HashMap和Hashtable的区别" class="prev">上一篇</a><a href="/posts/50eb6371.html/" title="java中List集合用法和实例详解" class="next">下一篇</a></div><a href="#comment" class="comment-anchor"></a><div id="vcomments"></div><script>new Valine({
+    el: "#vcomments",
+    appId: "zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz",
+    appKey: "3KpMWljrncl7SfARIGQwPNxh",
+    notify: false,
+    verify: false,
+    avatar: "robohash",
+    visitor: true,
+    placeholder: "随便说点什么～.～",
+});</script><div class="copyright"><p>© 2018 - 2019 <a target="_blank">daTou</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz", "3KpMWljrncl7SfARIGQwPNxh");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
+
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
+
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
+
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
+
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
+
+const calcAndWriteTimes = () => {
+let isPost = true;
+
+let timerAllDOM = document.querySelectorAll(".article-timer");
+
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
+
+let timerDOMCache = {};
+
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
+
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
+
+if(true){
+calcAndWriteTimes();
+}</script></body></html>
