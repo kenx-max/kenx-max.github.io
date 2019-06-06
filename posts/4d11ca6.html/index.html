@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> java中数组用法和实例详解 · 随记</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="java中数组用法和实例详解 - daTou"><meta name="keywords" content="datou，博客，java，随记，web"><meta name="author" content="daTou"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="https://datou-y.github.io/atom.xml" title="随记"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">java中数组用法和实例详解</h1><div class="post-info">2019-06-06<p class="visit"><i data-identity="posts/4d11ca6.html/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><p>数组是最常见的一种数据结构，它是相同类型的用一个标识符封装到一起的基本类型数据序列或者对象序列。数组使用一个统一的数组名和不同的下标来唯一确定数组中的元素。实质上，数组是一个简单的线性序列，因此访问速度很快</p>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String[] a=&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>&#125;;</span><br><span class="line">String[] b=<span class="keyword">new</span> String[<span class="number">5</span>];</span><br><span class="line">String[] names = <span class="keyword">new</span> String[] &#123; <span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span> &#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数据类型[] 数组名; 数据类型既可以是基本数据类型，也可以是引用数据类型</li>
+<li>创建并分配空间在 Java中可以使用<code>new</code>关键字来给数组分配空间<a id="more"></a>
+</li>
+</ul>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b[<span class="number">0</span>]=<span class="string">"a"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(b[<span class="number">0</span>]);</span><br><span class="line">System.out.println(b.length);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>length</code>属性获取数组长度</li>
+<li><code>b[0]</code> 直接通过下标获取数组对应位置元素</li>
+</ul>
+<h2 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//普通for循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">    System.out.println(a[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//增强for循环</span></span><br><span class="line"><span class="keyword">for</span>(String s:a)&#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">String[] a = &#123;<span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>, <span class="string">"d"</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">b[<span class="number">1</span>] = <span class="number">3</span>;</span><br><span class="line">b[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">Arrays.sort(b);</span><br><span class="line">Arrays.sort(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : a) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (Integer s : b) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Arrays.sort()</code>方法进行数组排序，字符串就按26个字符位置排序，数组就按大小排序</li>
+</ul>
+<h2 id="数组转换集合"><a href="#数组转换集合" class="headerlink" title="数组转换集合"></a>数组转换集合</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String[] a = &#123;<span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>, <span class="string">"d"</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">b[<span class="number">1</span>] = <span class="number">3</span>;</span><br><span class="line">b[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">List&lt;String&gt; ls = Arrays.asList(a);</span><br><span class="line"><span class="keyword">for</span> (String s : ls) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组反转"><a href="#数组反转" class="headerlink" title="数组反转"></a>数组反转</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">String[] a = &#123;<span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>, <span class="string">"d"</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">b[<span class="number">1</span>] = <span class="number">3</span>;</span><br><span class="line">b[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//先将数组转换为集合</span></span><br><span class="line">List&lt;String&gt; ls = Arrays.asList(a); </span><br><span class="line"><span class="comment">//然后调用Collections工具方法进行反转</span></span><br><span class="line">Collections.reverse(ls);</span><br><span class="line"><span class="keyword">for</span>(String s:ls)&#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组获取最大值和最小值"><a href="#数组获取最大值和最小值" class="headerlink" title="数组获取最大值和最小值"></a>数组获取最大值和最小值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String[] a = &#123;<span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>, <span class="string">"d"</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">b[<span class="number">1</span>] = <span class="number">3</span>;</span><br><span class="line">b[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//先将数组转换为集合</span></span><br><span class="line">List&lt;String&gt; ls = Arrays.asList(a);</span><br><span class="line"><span class="comment">//然后调用Collections工具方法进行比较</span></span><br><span class="line">System.out.println(Collections.max(ls));</span><br><span class="line">System.out.println(Collections.min(ls));</span><br></pre></td></tr></table></figure>
+<h2 id="数组合并"><a href="#数组合并" class="headerlink" title="数组合并"></a>数组合并</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String[] a = &#123;<span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>, <span class="string">"d"</span>&#125;;</span><br><span class="line">String[] b = &#123;<span class="string">"e"</span>, <span class="string">"f"</span>, <span class="string">"g"</span>&#125;;</span><br><span class="line"><span class="comment">//先将数组转换为集合</span></span><br><span class="line"></span><br><span class="line">List&lt;String&gt; ls = <span class="keyword">new</span> ArrayList&lt;String&gt;(Arrays.asList(a));</span><br><span class="line"><span class="comment">//在调用集合的合并方法</span></span><br><span class="line"></span><br><span class="line">ls.addAll(Arrays.asList(b));</span><br><span class="line">Object[] o = ls.toArray();</span><br><span class="line">System.out.println(Arrays.toString(o));</span><br><span class="line"><span class="keyword">for</span> (Object s : o) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="tip"><br>注意这里遇到一个坑<br></div>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; s=Arrays.asList(a);</span><br><span class="line">s.add(<span class="string">"1"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这样接收的<code>List</code>集合和我们<code>new</code>创建的有区别所以<code>add</code>等方法是又区别的</li>
+<li>参考<a href="https://www.2cto.com/kf/201806/751606.html" target="_blank" rel="noopener">ArrayList报错：UnsupportedOperationException的解决办法</a></li>
+</ul>
+<h2 id="数组填充"><a href="#数组填充" class="headerlink" title="数组填充"></a>数组填充</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">Arrays.fill(a,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> s:a)&#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://www.cnblogs.com/bahcelor/p/6593514.html" target="_blank" rel="noopener">Java关于数组操作函数</a></li>
+</ul>
+</div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/posts/57b1f1b.html/" title="ArrayList、LinkedList、Vector的区别和实现原理" class="next">下一篇</a></div><a href="#comment" class="comment-anchor"></a><div id="vcomments"></div><script>new Valine({
+    el: "#vcomments",
+    appId: "zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz",
+    appKey: "3KpMWljrncl7SfARIGQwPNxh",
+    notify: false,
+    verify: false,
+    avatar: "robohash",
+    visitor: true,
+    placeholder: "随便说点什么～.～",
+});</script><div class="copyright"><p>© 2018 - 2019 <a target="_blank">daTou</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz", "3KpMWljrncl7SfARIGQwPNxh");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
+
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
+
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
+
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
+
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
+
+const calcAndWriteTimes = () => {
+let isPost = true;
+
+let timerAllDOM = document.querySelectorAll(".article-timer");
+
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
+
+let timerDOMCache = {};
+
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
+
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
+
+if(true){
+calcAndWriteTimes();
+}</script></body></html>
