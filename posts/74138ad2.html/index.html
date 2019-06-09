@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> mysql中聚合函数使用详细和实例 · 随记</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="mysql中聚合函数使用详细和实例 - daTou"><meta name="keywords" content="datou，博客，java，随记，web"><meta name="author" content="daTou"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="https://datou-y.github.io/atom.xml" title="随记"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">mysql中聚合函数使用详细和实例</h1><div class="post-info">2019-06-08<p class="visit"><i data-identity="posts/74138ad2.html/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><h2 id="count"><a href="#count" class="headerlink" title="count"></a>count</h2><p><code>mysql</code> 数据库中 <code>count()</code> 函数是统计查询结果中的行数。列如下面的<code>empy</code>表</p>
+<p><img src="https://ae01.alicdn.com/kf/HTB1z3W4b21G3KVjSZFk761K4XXa8.png" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> empy;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><img src="https://ae01.alicdn.com/kf/HTB1902abW5s3KVjSZFN763D3FXaO.png" alt></p>
+<div class="tip"><br>注意的是，count 会忽略掉 NULL 的结果， 所以 count(字段名) 这样使用的话，如果字段中包含为null的结果，将导致查询结果不准确，列如：<br></div>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">name</span>) <span class="keyword">from</span> empy;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ae01.alicdn.com/kf/HTB1.sq4b25G3KVjSZPx762I3XXaT.png" alt></p>
+<h2 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h2><p><code>mysql</code> 中 <code>sum()</code> 函数用于计算某一字段中所有行的数值之和（ <code>sum 求和时会对 null 进行过滤，不计算</code>）,如果对无法计算的列进行<code>sum()</code>sum 函数的返回值为 <code>0</code>,如果没有符合条件的行，<code>sum()</code>将返回<code>null</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">返回结果为0</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(<span class="keyword">name</span>) <span class="keyword">from</span> empy;</span><br><span class="line">返回结果为32</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(dept_id) <span class="keyword">from</span> empy</span><br><span class="line">返回结果为<span class="literal">null</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(dept_id) <span class="keyword">from</span> empy <span class="keyword">where</span> dept_id=<span class="number">9</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="max"><a href="#max" class="headerlink" title="max"></a>max</h2><p><code>mysql</code> 中 <code>max()</code> 函数用于计算某一字段中所有行的最大值,如果对无法比较的列进行<code>max()</code>max 函数的返回值为 <code>xxx</code>,如果没有符合条件的行，<code>max()</code>将返回<code>null</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">返回结果为xxx</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(<span class="keyword">name</span>) <span class="keyword">from</span> empy;</span><br><span class="line">返回结果为4</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(dept_id) <span class="keyword">from</span> empy</span><br><span class="line">返回结果为<span class="literal">null</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(dept_id) <span class="keyword">from</span> empy <span class="keyword">where</span> dept_id=<span class="number">9</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="min"><a href="#min" class="headerlink" title="min"></a>min</h2><p><code>mysql</code>中 <code>min()</code>函数用于计算某一字段中所有行的最小值</p>
+<h2 id="avg"><a href="#avg" class="headerlink" title="avg"></a>avg</h2><ul>
+<li>返回指定字段的数据的平均值</li>
+<li><code>avg()</code> 通过对表中行数计数并计算指定字段的数据总和，求得该字段的平均值。</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://www.cnblogs.com/progor/p/8832663.html" target="_blank" rel="noopener">mysql之常用函数</a></li>
+</ul>
+</div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/posts/7b083b8f.html/" title="java中随机数使用" class="next">下一篇</a></div><a href="#comment" class="comment-anchor"></a><div id="vcomments"></div><script>new Valine({
+    el: "#vcomments",
+    appId: "zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz",
+    appKey: "3KpMWljrncl7SfARIGQwPNxh",
+    notify: false,
+    verify: false,
+    avatar: "robohash",
+    visitor: true,
+    placeholder: "随便说点什么～.～",
+});</script><div class="copyright"><p>© 2018 - 2019 <a target="_blank">daTou</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("zAMiuBUEFGvAqQNumOfiIqc9-gzGzoHsz", "3KpMWljrncl7SfARIGQwPNxh");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
+
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
+
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
+
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
+
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
+
+const calcAndWriteTimes = () => {
+let isPost = true;
+
+let timerAllDOM = document.querySelectorAll(".article-timer");
+
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
+
+let timerDOMCache = {};
+
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
+
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
+
+if(true){
+calcAndWriteTimes();
+}</script></body></html>
