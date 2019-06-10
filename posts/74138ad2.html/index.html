@@ -17,8 +17,21 @@
 <li>返回指定字段的数据的平均值</li>
 <li><code>avg()</code> 通过对表中行数计数并计算指定字段的数据总和，求得该字段的平均值。</li>
 </ul>
+<h2 id="now"><a href="#now" class="headerlink" title="now()"></a>now()</h2><ul>
+<li>获得当前日期+时间（<code>date + time</code>）函数：<code>now()</code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>(), <span class="keyword">sleep</span>(<span class="number">3</span>), <span class="keyword">now</span>();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="sysdate"><a href="#sysdate" class="headerlink" title="sysdate()"></a>sysdate()</h2><ul>
+<li><code>sysdate()</code> 日期时间函数跟 <code>now()</code>类似，不同之处在于：<code>now()</code> 在执行开始时值就得到了<code>sysdate()</code>在函数执行时动态得到值</li>
+<li><code>sysdate()</code> 日期时间函数，一般情况下很少用到。</li>
+</ul>
+<h2 id="current-timestamp"><a href="#current-timestamp" class="headerlink" title="current_timestamp()"></a>current_timestamp()</h2><ul>
+<li>获得当前时间戳函数<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">current_timestamp</span>, <span class="keyword">current_timestamp</span>();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
 <li><a href="https://www.cnblogs.com/progor/p/8832663.html" target="_blank" rel="noopener">mysql之常用函数</a></li>
+<li><a href="https://www.cnblogs.com/ggjucheng/p/3352280.html" target="_blank" rel="noopener"> MySQL 获得当前日期时间 函数</a></li>
 </ul>
 </div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/posts/7b083b8f.html/" title="java中随机数使用" class="next">下一篇</a></div><a href="#comment" class="comment-anchor"></a><div id="vcomments"></div><script>new Valine({
     el: "#vcomments",
