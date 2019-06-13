@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title>mysql查询结果去除重复数据</title>
+      <link href="/posts/e1a86da4.html/"/>
+      <url>/posts/e1a86da4.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="distinct去重"><a href="#distinct去重" class="headerlink" title="distinct去重"></a>distinct去重</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> st.stu_name <span class="keyword">from</span> student st</span><br><span class="line"><span class="keyword">where</span> st.stu_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mysql查询字段为null的处理</title>
+      <link href="/posts/8a034c1e.html/"/>
+      <url>/posts/8a034c1e.html/</url>
+      
+        <content type="html"><![CDATA[<ol><li>通过<code>is (not) null</code>进行<code>where</code>条件判断处理</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a <span class="keyword">from</span> A <span class="keyword">where</span> a <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span></span><br></pre></td></tr></table></figure><ol start="2"><li>通过 <code>case when</code>进行逻辑语句上的判断<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  (</span><br><span class="line">    <span class="keyword">case</span></span><br><span class="line">      <span class="keyword">when</span> a <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">then</span></span><br><span class="line">      <span class="string">''</span></span><br><span class="line">      <span class="keyword">when</span> a=<span class="string">"a"</span> <span class="keyword">then</span></span><br><span class="line">      <span class="string">"b"</span></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">      <span class="string">"idbs"</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    ) <span class="keyword">as</span> c</span><br><span class="line"><span class="keyword">from</span> A</span><br></pre></td></tr></table></figure></li></ol><a id="more"></a><ol start="3"><li>通过<code>IFNULL</code>函数进行判断<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ifnull</span>(a,<span class="string">"b"</span>) <span class="keyword">from</span> A</span><br></pre></td></tr></table></figure></li></ol><ul><li><code>ifnull(a,&quot;b&quot;)</code>第一个参数是你要查询字段，第二个是字段为<code>null</code>是的值</li></ul><ol start="4"><li><code>null</code>值概念</li></ol><ul><li>空值是不占用空间的。</li><li><code>mysql</code>中的<code>NULL</code>其实是占用空间的,打个比方来说，你有一个杯子，空值代表杯子是真空的，<code>NULL</code>代表杯子中装满了空气，虽然杯子看起来都是空的，但是区别是很大的</li><li><code>NOT NULL</code> 的字段是不能插入<code>“NULL”</code>的，只能插入<code>“空值”</code></li></ul><ol start="5"><li>总结</li></ol><ul><li>在进行<code>count()</code>统计某列的记录数的时候，如果采用的<code>NULL</code>值，系统会自动忽略掉，但是空值是会进行统计到其中的。</li><li>判断<code>NULL</code> 用<code>IS NULL</code> 或者 <code>IS NOT NULL</code>, SQL语句函数中可以使用<code>ifnull()</code>函数来进行处理，判断<code>空字符</code>用<code>=&#39;&#39;</code>或者 <code>&lt;&gt;&#39;&#39;</code>来进行处理</li><li>对于<code>MySQL</code>特殊的注意事项，对于<code>timestamp</code>数据类型，如果往这个数据类型插入的列插入<code>NULL</code>值，则出现的值是<code>当前系统时间</code>。插入<code>空值</code>，则会出现 <code>0000-00-00 00:00:00</code><br>对于<code>空值</code>的判断到底是使用<code>is null</code> 还是<code>=&#39;&#39;</code> 要根据实际业务来进行区分。</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/WNsshssm/article/details/79558452" target="_blank" rel="noopener">mysql查询字段为null时，返回空字符串</a></li><li><a href="https://blog.csdn.net/huanghanqian/article/details/85381552" target="_blank" rel="noopener">MySQL判断字段是否为null</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java全能最新自己面试企业真题总结</title>
+      <link href="/posts/4112469.html/"/>
+      <url>/posts/4112469.html/</url>
+      
+        <content type="html"><![CDATA[<p>这里你看面试题说明你已经离职了，没离职的建议考虑清楚再离职，你是否承担的起离职的代价，你为下一份工作做好了准备了吗。你是否具备离职条件，下一份工作你对自己的期望是什么，在没有考虑这些问题你慎重离职。<br><img src="https://ae01.alicdn.com/kf/HTB1Kq2ccA5E3KVjSZFCq6zuzXXad.jpg" alt><br><a id="more"></a></p><div class="tip"><br>所有题目都在博客文章中有涉及<br></div><h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ol><li><code>List</code>，<code>Set</code>，<code>Map</code>的区别</li><li><code>ArrayList</code>,<code>LinkList</code>,<code>Vector</code>区别</li><li><code>HashMap</code>,<code>HashTable</code>的区别</li><li><code>List</code>排序</li><li><code>List</code>去重</li><li><code>List</code>进行遍历修改操作是否会报错</li><li><code>List</code>数据的获取</li><li>数组排序</li><li><code>String</code>,<code>StringBuild</code>,<code>StringBuffer</code>区别</li><li><code>jdk1.8</code>新特性</li><li><code>Exception</code> 和<code>Error</code>区别</li><li>线程同步，与线程通信</li><li>java基本数据类型</li><li>生产指定的随机数</li><li>表单重复提交</li><li>单点登录</li><li><code>split(&quot;|&quot;)</code>和<code>split(&quot;//|&quot;)</code>区别</li><li><code>final</code>,<code>finaly</code>,<code>finalize</code>区别</li><li><code>overload</code>和<code>override</code>区别<code>overrided</code>返回值可以改变吗</li><li>如何实现<code>HashMap</code>同步或者是<code>ArrayList</code>同步</li><li><code>抽象类</code>，和<code>接口</code>的区别</li><li><code>==</code>和<code>equal</code>区别</li></ol><h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ol><li><code>mysql</code>数据去重</li><li>给你题目手写<code>mysql</code>语句</li><li>mysql<code>日期函数</code></li><li>mysql优化</li><li>mysql中<code>union</code>和<code>union all</code>区别</li><li>mysql中<code>in</code> 和 <code>exists</code>区别</li><li>mysql<code>索引</code></li><li>事物特性</li><li>判断什么情况下索引会失效</li><li>使用函数表达式会影响效率吗，会破坏索引吗</li><li>如何获取自增主键</li><li>如何获取重复的数据</li><li>如何对数据库<code>null</code>值处理</li></ol><h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><ol><li>项目中什么时候用到<code>redis</code></li><li><code>redis</code>原理</li><li>项目中用到<code>redis</code>那些类型</li></ol><h2 id="springMVC"><a href="#springMVC" class="headerlink" title="springMVC"></a>springMVC</h2><h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><ol><li>项目中有没有遇到数据比较多的时候，如何处理的</li><li>项目中高并发解决</li></ol><h2 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h2><ol><li>介绍自己项目经验，和做过的项目</li><li>会就简历上有的项目进行技术点提问</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>浅析MySQL中exists与in的使用和区别</title>
       <link href="/posts/df7b0a0e.html/"/>
       <url>/posts/df7b0a0e.html/</url>
