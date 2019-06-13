@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://datou-y.github.io/"/>
-  <updated>2019-06-13T00:06:22.432Z</updated>
+  <updated>2019-06-13T09:52:43.335Z</updated>
   <id>https://datou-y.github.io/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="https://datou-y.github.io/posts/e1a86da4.html/"/>
     <id>https://datou-y.github.io/posts/e1a86da4.html/</id>
     <published>2019-06-12T13:57:50.756Z</published>
-    <updated>2019-06-13T00:06:22.432Z</updated>
+    <updated>2019-06-13T09:52:43.335Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="distinct去重"><a href="#distinct去重" class="headerlink" title="distinct去重"></a>distinct去重</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> st.stu_name <span class="keyword">from</span> student st</span><br><span class="line"><span class="keyword">where</span> st.stu_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h2 id="distinct去重"><a href="#distinct去重" class="headerlink" title="distinct去重"></a>distinct去重</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> st.stu_name <span class="keyword">from</span> student st</span><br><span class="line"><span class="keyword">where</span> st.stu_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>;</span><br></pre></td></tr></table></figure><h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删选出重复数据</span></span><br><span class="line"><span class="keyword">select</span> a <span class="keyword">from</span> A <span class="keyword">group</span> <span class="keyword">by</span> a <span class="keyword">having</span> <span class="keyword">count</span>(*)&gt;<span class="number">1</span></span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;distinct去重&quot;&gt;&lt;a href=&quot;#distinct去重&quot; class=&quot;headerlink&quot; title=&quot;distinct去重&quot;&gt;&lt;/a&gt;distinct去重&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;distinct&lt;/span&gt; st.stu_name &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; student st&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; st.stu_name &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;group-by&quot;&gt;&lt;a href=&quot;#group-by&quot; class=&quot;headerlink&quot; title=&quot;group by&quot;&gt;&lt;/a&gt;group by&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 删选出重复数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; a &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; A &lt;span class=&quot;keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; a &lt;span class=&quot;keyword&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;count&lt;/span&gt;(*)&amp;gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
