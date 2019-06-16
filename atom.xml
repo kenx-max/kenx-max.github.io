@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://datou-y.github.io/"/>
-  <updated>2019-06-13T13:17:55.523Z</updated>
+  <updated>2019-06-16T02:07:13.060Z</updated>
   <id>https://datou-y.github.io/</id>
   
   <author>
@@ -15,6 +15,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IDEA工具开发使用@Autowired注解报错解决方案 </title>
+    <link href="https://datou-y.github.io/posts/794ce61d.html/"/>
+    <id>https://datou-y.github.io/posts/794ce61d.html/</id>
+    <published>2019-06-16T01:55:51.289Z</published>
+    <updated>2019-06-16T02:07:13.060Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用<code>IDEA</code>工具进行开发的时候,需要<code>@Autowired</code>自动注解<code>bean</code>时会报红线,但是项目依然能够运行<br>点击<code>File--》Project Structure...--》Facets</code>删除右边对应的<code>spring</code>模块<br>对应的<code>IDEA</code>版本仅限于如下版本<br><img src="https://ae01.alicdn.com/kf/HTB1CSx7c21H3KVjSZFH762KppXau.png" alt><br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用&lt;code&gt;IDEA&lt;/code&gt;工具进行开发的时候,需要&lt;code&gt;@Autowired&lt;/code&gt;自动注解&lt;code&gt;bean&lt;/code&gt;时会报红线,但是项目依然能够运行&lt;br&gt;点击&lt;code&gt;File--》Project Structure...--》Facets&lt;/code&gt;删除右边对应的&lt;code&gt;spring&lt;/code&gt;模块&lt;br&gt;对应的&lt;code&gt;IDEA&lt;/code&gt;版本仅限于如下版本&lt;br&gt;&lt;img src=&quot;https://ae01.alicdn.com/kf/HTB1CSx7c21H3KVjSZFH762KppXau.png&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="问题" scheme="https://datou-y.github.io/categories/%E9%97%AE%E9%A2%98/"/>
+    
+    
+      <category term="problem" scheme="https://datou-y.github.io/tags/problem/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot 2.x(四):整合Mybatis的四种方式</title>
+    <link href="https://datou-y.github.io/posts/7f83a289.html/"/>
+    <id>https://datou-y.github.io/posts/7f83a289.html/</id>
+    <published>2019-06-15T13:16:19.128Z</published>
+    <updated>2019-06-15T13:21:45.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>目前的大环境下，使用<code>Mybatis</code>作为持久层框架还是占了绝大多数的，下面我们来说一下使用<code>Mybatis</code>整合<code>Spring Boot</code>的几种姿势。<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目前的大环境下，使用&lt;code&gt;Mybatis&lt;/code&gt;作为持久层框架还是占了绝大多数的，下面我们来说一下使用&lt;code&gt;Mybatis&lt;/code&gt;整合&lt;code&gt;Spring Boot&lt;/code&gt;的几种姿势。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://datou-y.github.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://datou-y.github.io/tags/Spring-Boot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot入门快速搭建web项目</title>
+    <link href="https://datou-y.github.io/posts/914fc93.html/"/>
+    <id>https://datou-y.github.io/posts/914fc93.html/</id>
+    <published>2019-06-15T01:21:26.064Z</published>
+    <updated>2019-06-15T13:14:01.906Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是Spring-Boot"><a href="#什么是Spring-Boot" class="headerlink" title="什么是Spring Boot"></a>什么是Spring Boot</h2><p><code>Spring Boot</code> 是由 <code>Pivotal</code> 团队提供的全新框架，其设计目的是用来简化新 <code>Spring</code> 应用的初始搭建以及开发过程。该框架使用了<code>特定的方式</code>来进行配置，从而使开发人员不再需要定义样板化的配置。用我的话来理解，就是 <code>Spring Boot</code> 其实不是什么新的框架，它默认配置了很多框架的使用方式，就像 <code>Maven</code> 整合了所有的 <code>Jar</code> 包，<code>Spring Boot</code> 整合了所有的框架。</p><h2 id="使用-Spring-Boot-有什么好处"><a href="#使用-Spring-Boot-有什么好处" class="headerlink" title="使用 Spring Boot 有什么好处"></a>使用 Spring Boot 有什么好处</h2><ul><li>配置 <code>web.xml</code>，加载 <code>Spring</code> 和 <code>Spring mvc</code></li><li>配置数据库连接、配置 <code>Spring</code> 事务</li><li>配置加载配置文件的读取，开启注解</li><li>配置日志文件</li><li>…</li><li>配置完成之后部署 <code>Tomcat</code> 调试</li></ul><p>现在非常流行微服务，如果我这个项目仅仅只是需要发送一个邮件，如果我的项目仅仅是生产一个积分；我都需要这样折腾一遍!</p><p>但是如果使用 <code>Spring Boot</code> 呢？<br>很简单，我仅仅只需要非常少的几个配置就可以迅速方便的搭建起来一套 Web 项目或者是构建一个微服务！</p><p>使用 <code>Spring Boot</code> 到底有多爽，用下面这幅图来表达<br><img src="https://ae01.alicdn.com/kf/HTB1DT75cRCw3KVjSZFlq6AJkFXaO.jpg" alt></p><a id="more"></a><h2 id="官网在线搭建"><a href="#官网在线搭建" class="headerlink" title="官网在线搭建"></a>官网在线搭建</h2><ol><li><p><a href="http://start.spring.io/" target="_blank" rel="noopener">访问官网 https://start.spring.io/</a></p></li><li><p>选择构建工具 <code>Maven Project</code>、语言<code>Java</code>、<code>Spring Boot</code>版本 <code>Project Metadata</code> 工程基本信息</p></li></ol><p><img src="https://ae01.alicdn.com/kf/HTB1AtQ1cLWG3KVjSZFg762TspXa2.png" alt></p><ol start="3"><li><p>点击 <code>Generate Project</code>下载项目压缩包</p></li><li><p>解压后，使用 <code>Idea</code> 导入项目，<code>File -&gt; New -&gt; Model from Existing Source.. -&gt;</code>选择解压后的文件夹 -&gt;<code>OK，</code>选择 <code>Maven 一路 Next，OK done!</code></p></li></ol><h2 id="通过Intellij-IDEA搭建"><a href="#通过Intellij-IDEA搭建" class="headerlink" title="通过Intellij IDEA搭建"></a>通过Intellij IDEA搭建</h2><ol><li>选择 <code>File -&gt; New —&gt; Project…</code> 弹出新建项目的框</li><li>选择 <code>Spring Initializr，Next</code> 也会出现上述类似的配置界面，Idea 帮我们做了集成</li><li>填写相关内容后，点击 <code>Next</code> 选择依赖的包再点击 <code>Next</code>，最后确定信息无误点击 <code>Finish</code></li><li>如果使用的是 <code>Eclipse，</code> <code>Import -&gt; Existing Maven Projects -&gt; Next -&gt;</code>选择解压后的文件夹 -&gt; <code>Finsh，OK done!</code></li></ol><h2 id="项目结构介绍"><a href="#项目结构介绍" class="headerlink" title="项目结构介绍"></a>项目结构介绍</h2><p><img src="https://ae01.alicdn.com/kf/HTB1FEo7cR1D3KVjSZFy762uFpXad.png" alt></p><p>如上图所示，Spring Boot 的基础结构共三个文件:</p><ul><li><code>src/main/java</code> 程序开发以及主程序入口</li><li><code>src/main/resources</code> 配置文件</li><li><code>src/test/java</code> 测试程序</li></ul><p>另外， <code>Spring Boot</code> 建议的目录结果如下：<br><code>root package</code> 结构：<code>com.example.myproject</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">com</span><br><span class="line">  +- example</span><br><span class="line">    +- myproject</span><br><span class="line">      +- Application.java</span><br><span class="line">      |</span><br><span class="line">      +- model</span><br><span class="line">      |  +- Customer.java</span><br><span class="line">      |  +- CustomerRepository.java</span><br><span class="line">      |</span><br><span class="line">      +- service</span><br><span class="line">      |  +- CustomerService.java</span><br><span class="line">      |</span><br><span class="line">      +- controller</span><br><span class="line">      |  +- CustomerController.java</span><br><span class="line">      |</span><br></pre></td></tr></table></figure></p><ol><li><code>Application.java</code> 建议放到根目录下面,主要用于做一些框架配置</li><li><code>model</code> 目录主要用于实体与数据访问层（<code>Repository</code>）</li><li><code>service</code> 层主要是业务类代码</li><li><code>controller</code> 负责页面访问控制</li></ol><p>采用默认配置可以省去很多配置，当然也可以根据自己的喜欢来进行更改<br>最后，启动 Application main 方法，至此一个 Java 项目搭建好了！</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol><li><code>pom.xml</code>中添加支持<code>web</code>的模块：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li></ol><p><code>pom.xml</code> 文件中默认有两个模块:<br><code>spring-boot-starter</code> ：核心模块，包括自动配置支持、日志和 <code>YAML</code><br><code>spring-boot-starter-test</code> ：测试模块，包括 <code>JUnit、Hamcrest、Mockito</code><br><code>spring-boot-starter-web</code> 自动依赖了 <code>spring-boot-starter</code>加了<code>web</code>模块后可以去掉<code>spring-boot-starter</code>模块</p><ol start="2"><li>编写 Controller 内容：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p><code>@RestController</code> 的意思就是 <code>Controller</code> 里面的方法都以 <code>json</code> 格式输出，不用再写什么 <code>jackjson</code> 配置的了！</p><ol start="3"><li>启动主程序，打开浏览器访问 <code>http://localhost:8080/hello</code>，就可以看到效果了，有木有很简单！</li></ol><p><div class="tip"><a href="https://github.com/daTou-Y/spring-boot-examples/tree/master/spring-boot-helloWorld" target="_blank" rel="noopener">GitHub示例代码</a><div></div></div></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/qq_27317475/article/details/81119098" target="_blank" rel="noopener">SpringBoot入门，快速搭建简单Web应用环境</a></li><li><a href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html" target="_blank" rel="noopener">Spring Boot(一)：入门篇</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是Spring-Boot&quot;&gt;&lt;a href=&quot;#什么是Spring-Boot&quot; class=&quot;headerlink&quot; title=&quot;什么是Spring Boot&quot;&gt;&lt;/a&gt;什么是Spring Boot&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Spring Boot&lt;/code&gt; 是由 &lt;code&gt;Pivotal&lt;/code&gt; 团队提供的全新框架，其设计目的是用来简化新 &lt;code&gt;Spring&lt;/code&gt; 应用的初始搭建以及开发过程。该框架使用了&lt;code&gt;特定的方式&lt;/code&gt;来进行配置，从而使开发人员不再需要定义样板化的配置。用我的话来理解，就是 &lt;code&gt;Spring Boot&lt;/code&gt; 其实不是什么新的框架，它默认配置了很多框架的使用方式，就像 &lt;code&gt;Maven&lt;/code&gt; 整合了所有的 &lt;code&gt;Jar&lt;/code&gt; 包，&lt;code&gt;Spring Boot&lt;/code&gt; 整合了所有的框架。&lt;/p&gt;
+&lt;h2 id=&quot;使用-Spring-Boot-有什么好处&quot;&gt;&lt;a href=&quot;#使用-Spring-Boot-有什么好处&quot; class=&quot;headerlink&quot; title=&quot;使用 Spring Boot 有什么好处&quot;&gt;&lt;/a&gt;使用 Spring Boot 有什么好处&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;配置 &lt;code&gt;web.xml&lt;/code&gt;，加载 &lt;code&gt;Spring&lt;/code&gt; 和 &lt;code&gt;Spring mvc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;配置数据库连接、配置 &lt;code&gt;Spring&lt;/code&gt; 事务&lt;/li&gt;
+&lt;li&gt;配置加载配置文件的读取，开启注解&lt;/li&gt;
+&lt;li&gt;配置日志文件&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;li&gt;配置完成之后部署 &lt;code&gt;Tomcat&lt;/code&gt; 调试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在非常流行微服务，如果我这个项目仅仅只是需要发送一个邮件，如果我的项目仅仅是生产一个积分；我都需要这样折腾一遍!&lt;/p&gt;
+&lt;p&gt;但是如果使用 &lt;code&gt;Spring Boot&lt;/code&gt; 呢？&lt;br&gt;很简单，我仅仅只需要非常少的几个配置就可以迅速方便的搭建起来一套 Web 项目或者是构建一个微服务！&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;Spring Boot&lt;/code&gt; 到底有多爽，用下面这幅图来表达&lt;br&gt;&lt;img src=&quot;https://ae01.alicdn.com/kf/HTB1DT75cRCw3KVjSZFlq6AJkFXaO.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://datou-y.github.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://datou-y.github.io/tags/Spring-Boot/"/>
+    
+  </entry>
   
   <entry>
     <title>java中数据类型分类</title>
@@ -429,85 +506,6 @@
     
     
       <category term="form" scheme="https://datou-y.github.io/tags/form/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jpg、gif、png和svg用于web上，我们该如何选择最合适的图像格式？</title>
-    <link href="https://datou-y.github.io/posts/c7fb8024.html/"/>
-    <id>https://datou-y.github.io/posts/c7fb8024.html/</id>
-    <published>2018-06-29T03:19:21.000Z</published>
-    <updated>2019-05-28T23:33:21.915Z</updated>
-    
-    <content type="html"><![CDATA[<p>要是问你，你知道当下都有哪些图像格式嘛？我猜你肯定说不全，因为现在图像格式真的太多了，但是应该能说出这几个常用的格式：<code>jpg</code>、<code>gif</code>、<code>png</code>和<code>svg</code>。然后我再问你，知不知道这几个格式有什么区别？各自的适用场景又是什么呢？<code>logo</code>应该是选择 <code>svg</code> 还是 <code>png</code> ？而截图是选 <code>jpg</code> 还是 <code>png</code> 好？在不生成过大文件的前提下，文件的最优质量是多少？了解每个图像格式的工作原理以及它们各自的利弊可以帮助回答这些问题。</p><p>在过去几年中，数字化设计和前端开发里大量的研究和测试工具已经帮助我们搞清楚了这些问题。在本文中，我将展示一下每种格式的工作原理，它们各自的优点以及在网页使用时的压缩与保存方法。</p><a id="more"></a><h2 id="先来看几个概念"><a href="#先来看几个概念" class="headerlink" title="先来看几个概念"></a>先来看几个概念</h2><ul><li>有损(<code>Lossless</code>)和无损(<code>Lossy</code>)：一般我们聊到图片的时候经常会听到别人提到有损或者无损的字眼，那么什么是有损和无损呢？无损就是图片在压缩保存后虽然占用的存储更小了，但是图像的呈现质量依然如旧；而有损则是相反，图像随着一次又一次的压缩后，质量会变得越来越差。</li><li>索引色(<code>Indexed color</code>)和直接色(<code>Direct color</code>)：按照不同的颜色深度可以将颜色分为索引色和直接色。索引色就是图像作者指定图片的用色总共不超过256种；而直接色则是对颜色使用没有限制，可以存在成千上万的颜色值。</li><li>光栅格式(<code>raster</code>)和矢量格式(<code>vector</code>)：图像根据信息的表示方式可以分为光栅图和矢量图。光栅图也叫作位图，点阵图或者像素图，图的最小单位是由一个个带颜色的像素组合而成，在 <code>Photoshop</code> 里把图片放到最大，将看到许许多多的像素方块，所以光栅图在伸缩的时候图像可能会失真；而矢量图则是以由点、线和一些几何图形为基础，通过数学计算来排列组合而成，这种图在伸缩的时候能完好的保护质量。</li></ul><h2 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h2><p><code>JEPG</code>由联合图像专家小组（<code>Joint Photographic Experts Group</code>）于1992年创建，并以创建者命名。<code>JPEG</code>是一种有损光栅图像格式，这意味着每次压缩保存JPEG时，一些信息将发生不可逆转地丢失；且存储的颜色无限制，这就对存储照片这种颜色非常丰富复杂的图像就很友好了。</p><p>因为 <code>JPEG</code> 压缩在亮度和色彩上面的优越性，所以 <code>JPEG</code> 非常适合用于照片、色彩梯度明显的图像比如渐变和阴影这些地方。</p><p><code>JPEG</code> 的压缩可以用 <code>Photoshop</code> 里存储为 <code>web</code> 格式的时候可以直接选择压缩品质，一般用于 <code>web</code> 的 <code>JPG</code> 图片选择 <code>50%-60%</code> 质量的即可，因为它兼顾不错的图像质量和较小的文件尺寸。另外也可以用在线压缩工具 <code>TinyJPG</code>。</p><p>下面这个图，我用的是 <code>50%</code>的品质压缩出来的 <code>JPG</code>，很明显质量要比 <code>GIF</code> 的要好很多，而且文件尺寸也小不少。</p><p><img src="../../../../images/201706/webgra_01.png" alt="webgra_01"></p><blockquote><p><code>JPEG</code> 和 <code>JPG</code> 的区别：<code>JPEG</code> 更多的指的是 <code>.jpg</code> 图像格式的一种压缩算法，而 <code>JPG</code> 就是一种图像存储的格式。</p></blockquote><h2 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h2><p>可移植网络图形（<code>Portable Network Graphics</code>）也是一种自1995年以来就一直存在的光栅图像格式。它与 <code>JPEG</code> 不同，因为它是一种无损格式，并且是目前网络上最常见的无损格式。这意味着由于它的压缩算法，当文件被保存和压缩时，不会丢失任何信息。</p><h3 id="PNG格式"><a href="#PNG格式" class="headerlink" title="PNG格式"></a>PNG格式</h3><p><code>PNG</code>其实可以细分为好几个格式的，有<code>PNG 8</code>、<code>PNG 24</code>和<code>PNG 32</code>。那么怎么区分一个 <code>PNG</code> 图片是什么格式的呢？</p><p><img src="../../../../images/201706/webgra_02.png" alt="png_24"></p><p>打开上面这张图片的属性面板，从详细信息里看到有一个属性叫做位深度，它的值是24，那么就表示他是 <code>PNG 24</code> 格式的图片。同样，<code>PNG 8</code> 和 <code>PNG 32</code> 的位深度分别是8和32。</p><blockquote><p>位深度表示图像能够存储颜色的最大数值。8位就是2的8次方（2^8=256）种颜色，所以 <code>PNG 8</code> 最多只能存储256种颜色。<code>PNG 24</code> 和 <code>PNG 32</code>又叫真彩色，最多存储2的24次方种颜色，可以达到人眼分辨的极限了；<code>PNG 32</code>中剩余的8位存储的是<code>Alpha</code> 通道的透明色。</p></blockquote><p>然后如何生成这些不同格式的图片呢？<br>自然是用专业的图像处理软件啦，比如可以用 <code>Photoshop</code> 或者 <code>Fireworks</code>。这里以 <code>Photoshop</code> 为例子，文件-&gt;存储为 <code>Web</code> 所用格式， 可以看到下拉这里只有 <code>PNG-8</code> 和 <code>PNG-24</code>，而没有 <code>PNG-32</code> 呢？是因为 <code>Photoshop</code>不支持这个格式嘛？并不是。</p><p><img src="../../../../images/201706/webgra_04.png" alt="png_generate"></p><p>在 <code>Photoshop</code> 里导出 <code>PNG-32</code> 格式的图片是通过选择 <code>PNG-24</code>格式，并且勾选下面的透明度，这样生成的图片位数才是32位的，如果不勾选透明度的话就是 <code>PNG-24</code> 格式。由此看来 <code>PNG-24</code> 是不支持透明的，<code>PNG-32</code> 是支持透明的。</p><h3 id="PNG透明度"><a href="#PNG透明度" class="headerlink" title="PNG透明度"></a>PNG透明度</h3><p>从 <code>Fireworks 8</code>的优化面板里可以看到 <code>PNG</code> 格式存在三种透明格式：不透明、索引透明和 <code>Alpha</code>透明。</p><p><img src="../../../../images/201706/webgra_05.png" alt="png_transparency"></p><ul><li><p><code>PNG 8</code>透明度</p><p>  从上面那个图里可以看出 <code>PNG 8</code> 是支持这三种不透明格式的。但是 <code>Photoshop</code> 只支持导出不透明和索引透明格式。在<code>Photoshop</code> 中如果选择 <code>PNG 8</code>，且勾选了透明度，那么导出的图片就是 <code>PNG 8</code> 索引透明，否则就是 <code>PNG 8</code> 不透明。</p><p>  <img src="../../../../images/201706/webgra_06.png" alt="png_8_index"></p><p>  用 <code>Photoshop</code> 和 <code>Fireworks 8</code> 导出 <code>PNG 8</code> 的各种格式如下所示：</p><p>  <img src="../../../../images/201706/webgra_03.png" alt="png_8_transparency"></p><p>  根据以上图片我们可以得出结论：</p><ul><li><code>Photoshop</code> 导出的 <code>PNG 8</code> 图片都带有锯齿。</li><li><p><code>PNG 8</code> 索引透明都带有锯齿，且 <code>Fireworks 8</code> 导出的 <code>PNG 8</code>索引透明的锯齿是白色的。</p><p>再来看看这些格式在不同浏览器下的表现情况：</p><p><img src="../../../../images/201706/webgra_07.png" alt="png_8_Compatibility"></p><p>根据以上图片我们可以得出结论：</p></li><li><p><code>PNG 8</code> 索引透明和 <code>Alpha</code> 透明都兼容<code>IE 6</code>；但美中不足的是，<code>PNG 8Alpha</code>透明在 <code>IE 6</code>下会产生锯齿。</p></li><li>其他格式的图片在各个浏览器下的表现一致。</li><li><code>Fireworks 8</code>导出的 <code>PNG 8</code>索引透明带有白色锯齿，但是如果图片是放到白色的背景的容器下，那么这个白色锯齿就完全看不出来了，表现得和正常效果一样。</li></ul></li><li><p><code>PNG 24</code> 和 <code>PNG 32</code></p><p>  <code>PNG 24</code> 是不透明的；<code>PNG 32</code> 是支持透明的，且是 <code>Alpha</code> 透明。来看下它们在不同浏览器下的表现：</p><p>  <img src="../../../../images/201706/webgra_08.png" alt="png_2432_Compatibility"></p><p>  <code>PNG 32</code> 图片的透明区域在 <code>IE 6</code> 下将不再透明，而是颜色值为 <code>f0f0f0</code> 的灰色填充，在更高级版本的 <code>IE</code> 下是正常的。<code>PNG 32</code> 图片不会有锯齿。</p></li></ul><h3 id="PNG压缩"><a href="#PNG压缩" class="headerlink" title="PNG压缩"></a>PNG压缩</h3><p>本文前面提到了 <code>JPEG</code> 在照片片这类颜色丰富的图像上的优秀表现，所以现在将它和 <code>PNG</code> 的3种格式进行对比。主要是对比压缩前后的存储体积以及表现效果等方面。用的是免费的在线压缩工具 <a href="https://tinypng.com/" target="_blank" rel="noopener">TinyPNG</a>，这个工具可以压缩 <code>JPEG</code> 和 <code>PNG</code> 格式。</p><p><img src="../../../../images/201706/webgra_09.png" alt="png_jpeg"></p><p>从上图这个图中，我们可以从不同角度得出一些结论：</p><ul><li><code>PNG 8</code> 格式的图片颜色过度处理得很突兀，能看到很明显的波浪褶皱，这就是因为它最多只能存储256种颜色导致的，所以<code>PNG 8</code>不适合用于存储颜色复杂的图像。相反，由于其相对于 <code>PNG 24</code> 或者 <code>PNG 32</code> 有先天的存储体积小优势，所以它非常适合应用于图标、颜色简单的或透明的图像上。</li><li>对比100%质量的 <code>JPG</code>、55%质量的 <code>JPG</code>、<code>PNG 24</code> 和 <code>PNG 32</code>，肉眼上看他们的图像表现效果都差不多，但是各自所占用的存储空间却是差得有些离谱。压缩前，当属55%质量的 <code>JPG</code> 占用存储最小；压缩后，<code>PNG 24</code> 和 <code>PNG 32</code> 一样，会比55%质量的 <code>JPG</code> 小一些，但是由于 <code>PNG 32</code> 支持透明，所以对于颜色丰富的图像建议用 <code>PNG 32</code> 格式导出，然后用压缩工具压缩一下即可。</li><li>对比压缩前后的 <code>PNG 24</code> 和 <code>PNG 32</code> 两者的存储体积相差巨大，但是表现效果却相差无几，所以用于 <code>web</code> 上的 <code>PNG 24</code> 或 <code>PNG 32</code> 图像一定要记得压缩，这对于客户端的性能优化将提供非常大的帮助。</li></ul><h2 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h2><p>图形交换格式（<code>Graphics Interchange Format</code>）也是一种光栅格式，最多只能存储256种颜色，支持透明度，而且在 <code>IE 6</code> 下也支持得很好，唯一美中不足的是除了 <code>Fireworks 8</code> 导出的 <code>GIF</code> 不透明格式外，所有的其他 <code>GIF</code> 格式的图片都存在锯齿。</p><p><img src="../../../../images/201706/webgra_10.png" alt="gif"></p><p>但是 <code>GIF</code> 也不是一无是处，最大的优点就是支持简单的动画。如下面简单的交通灯动画：</p><p><img src="../../../../images/201706/traffic-light.gif" alt="gif_ani"></p><h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><p>可伸缩矢量图形（<code>Scalable Vector Graphics</code>），顾名思义它是矢量的，而非光栅格式。区别于光栅格式的依靠像素点来存储图像，矢量图是通过XML格式来数据化的记录图像的信息。所以 <code>SVG</code> 相对于光栅格式的图像具有以下优势：</p><ul><li>任意伸缩图像，而不会破坏图像的清晰度和细节。</li><li>完全支持 <code>DOM</code>，以及 <code>JavaScript</code> 能够很好的访问到它。</li><li>总体来讲，<code>SVG</code>的文件会比 <code>GIF</code> 或 <code>JPG</code> 的会小很多。</li></ul><p>就像其它矢量格式，<code>SVG</code> 图片能不丢失任何细节地放大到任何大小。打个比方，同一个图标，可以以多种尺寸使用，并且在任何屏幕分辨率（比如 <code>Retina</code> 显示器）中都将看起来很清晰，而不需要存成多个文件。比如下面这个这个图对比，右边的是矢量图，左边的是其他格式图片：</p><p><img src="../../../../images/201706/webgra_11.png" alt="svg"></p><h2 id="SVG用途"><a href="#SVG用途" class="headerlink" title="SVG用途"></a>SVG用途</h2><p><code>SVG</code> 在线条艺术，<code>LOGO</code>，图标，插画和数据可视化方面用途广泛。但它不适用于写实图像和有许多细节的复杂图片。在一些情况下，<code>SVG</code> 和 <code>PNG</code> 都能很好地达到同一个目的。对于线条艺术，<code>SVG</code> 通常能生成较小的文件。但是这不是必然的，实际情况会根据矢量图像究竟有多少个锚点，它甚至可能会生成比PNG更大的文件。 <code>SVG</code> 真正出色的地方是数据可视化。由于可以使用<code>JavaScript</code> 来操纵和创建矢量动画，诸如 <code>D3</code> 之类的库提供了无限的可能性。<code>LOGO</code>, 图标和数据可视化是 <code>SVG</code> 使用的优秀范例。</p><p><img src="../../../../images/201706/webgra_12.png" alt="svg_use"></p><h2 id="SVG压缩"><a href="#SVG压缩" class="headerlink" title="SVG压缩"></a>SVG压缩</h2><p>比较好的 <code>SVG</code> 方法应该是通过清除 <code>SVG</code> 矢量图形中不必要的锚点、元素和属性来减少文件大小。锚点绘制了矢量图像，因此，你需要确保已移除的锚点不会影响矢量图形的最终形状。如果您使用 <code>Adobe Illustrator</code> 编辑 <code>SVG</code>，请确保使用导 -&gt; 导出为，而不是文件 -&gt; 另存为进行保存，因为这样才能生成一个最小化的文件。</p><p><img src="../../../../images/201706/webgra_13.png" alt="svg_compress"> </p><p>清理不必要的节点是缩减 <code>SVG</code> 尺寸的一种途径。<br>元素标签是包含在 <code>SVG</code> 文件内的所有内容，包括开始和结束标签。<br>矢量编辑软件，如 <code>Adobe Illustrator</code> 和 <code>Sketch</code> 可能会到处含有非必要元素和属性的 <code>SVG</code> 。<br><code>SVG</code> 压缩器可用于删除这种多余的信息。<code>Compresso</code> 和 <code>SVGOMG</code> 等在线工具可以完成此工作。</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul><li><a href="http://web.jobbole.com/91599/" target="_blank" rel="noopener">在网页上使用JPG、PNG和SVG：新手指南</a></li><li><a href="http://www.cnblogs.com/PeunZhang/archive/2013/05/30/3050394.html" target="_blank" rel="noopener">PNG使用技巧</a></li><li><a href="https://stackoverflow.com/questions/2336522/png-vs-gif-vs-jpeg-vs-svg-when-best-to-use" target="_blank" rel="noopener">PNG vs. GIF vs. JPEG vs. SVG - When best to use?</a></li><li><a href="https://www.sitepoint.com/gif-png-jpg-which-one-to-use/" target="_blank" rel="noopener">JPG vs PNG vs GIF vs SVG – What is the Difference?</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;要是问你，你知道当下都有哪些图像格式嘛？我猜你肯定说不全，因为现在图像格式真的太多了，但是应该能说出这几个常用的格式：&lt;code&gt;jpg&lt;/code&gt;、&lt;code&gt;gif&lt;/code&gt;、&lt;code&gt;png&lt;/code&gt;和&lt;code&gt;svg&lt;/code&gt;。然后我再问你，知不知道这几个格式有什么区别？各自的适用场景又是什么呢？&lt;code&gt;logo&lt;/code&gt;应该是选择 &lt;code&gt;svg&lt;/code&gt; 还是 &lt;code&gt;png&lt;/code&gt; ？而截图是选 &lt;code&gt;jpg&lt;/code&gt; 还是 &lt;code&gt;png&lt;/code&gt; 好？在不生成过大文件的前提下，文件的最优质量是多少？了解每个图像格式的工作原理以及它们各自的利弊可以帮助回答这些问题。&lt;/p&gt;
-&lt;p&gt;在过去几年中，数字化设计和前端开发里大量的研究和测试工具已经帮助我们搞清楚了这些问题。在本文中，我将展示一下每种格式的工作原理，它们各自的优点以及在网页使用时的压缩与保存方法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="web综合" scheme="https://datou-y.github.io/categories/web%E7%BB%BC%E5%90%88/"/>
-    
-    
-      <category term="svg" scheme="https://datou-y.github.io/tags/svg/"/>
-    
-      <category term="图像" scheme="https://datou-y.github.io/tags/%E5%9B%BE%E5%83%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chrome开发者工具实用小技巧</title>
-    <link href="https://datou-y.github.io/posts/d7262aae.html/"/>
-    <id>https://datou-y.github.io/posts/d7262aae.html/</id>
-    <published>2018-06-15T10:20:21.000Z</published>
-    <updated>2019-05-28T01:54:06.744Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>chrome</code> 浏览器是每个前端开发者最常用的浏览器，因为界面简洁友好，开发者工具功能强大且简单易用，大大提升了开发效率。所以很有必要了解 <code>chrome</code> 开发者工具都有哪些很常用或实用的功能。<br>写这篇文章的时候，chrome的版本如下：</p><p><img src="../../../../images/201703/chrome_01.png" alt="chrome版本"></p><a id="more"></a><h2 id="Elements面板篇"><a href="#Elements面板篇" class="headerlink" title="Elements面板篇"></a>Elements面板篇</h2><ul><li><p>在 <code>Elements</code> 面板中，使用 <code>Ctrl + F</code> 打开搜索输入框，可以输入常规字符串或选择器来选择 <code>HTML</code> 元素。</p><p>  <img src="../../../../images/201703/chrome_02.png" alt="ctrl+f"></p></li><li><p>在元素前面的小黑三角上用 <code>Alt +</code> 鼠标左键即可展开收起当前元素下的所有子元素。</p><p>  <img src="../../../../images/201703/chrome_03.png" alt="alt+left"></p></li><li><p>css数值使用快捷键调整：</p><ul><li><code>Up / Down</code>：增加减少1</li><li><code>Ctrl + Up / Ctrl + Down</code>：增加减少100</li><li><code>Shift + Up / Shift + Down</code>：增加减少10</li><li><code>Alt + Up / Alt + Down</code>： 增加减少0.1</li><li><p><code>Up / Down</code> 等同于鼠标滚轮</p><p><img src="../../../../images/201703/chrome_04.png" alt="css-number-value"></p></li></ul></li><li><p>查看事件监听器。选中一个元素，然后点击 <code>Event Listeners</code> 面板，可以看到当前元素绑定的所有事件。然后找到任一事件类型下的 <code>handler</code>，右键单击选择 <code>Show function definition</code> 即可在 <code>Source</code> 面板中打开且定位到当前事件的处理函数的所在位置。</p><p>  <img src="../../../../images/201703/chrome_05.png" alt="event-listeners"></p></li><li><p>点击颜色方格会打开 <code>chrome</code> 的调色板。如下图第1块是着色和阴影选择器。第2块像笔那个按钮( <code>toggle color picker</code> )是取色器，蓝色的时候表示激活状态，就可以在页面任何一处进行取色；右边绿色圆形的是当前的颜色值，点击会将当前颜色值的代码复制到剪贴板；再右边的两块条分别表示色调选择器和不透明度选择器。第3块是表示当前颜色的显示模式，后边的按钮可以切换显示模式。第4块，<code>Color Palettes</code> 里分3小块，分别是：<code>Material Design</code>，一组符合 <code>Material Design</code> 规范的颜色；<code>Page Colors</code>，一组从页面的 <code>CSS</code> 自动生成的颜色；<code>Custom</code>，自定义颜色。第5块颜色面板，长按颜色块可以弹出10个当前颜色由浅至深的小色块，这个功能对于精确定制网页主题颜色非常有帮助。第6块是自定义颜色，这里可以添加删除自定义颜色，并且会永久保存在 <code>chrome</code> 的 <code>DevTools</code> 里，不会因为刷新或关闭浏览器而消失。第7块是生成了一些和页面相关的颜色值。</p><p>  <img src="../../../../images/201703/chrome_06.png" alt="color-palette"></p></li><li><p>可视化 <code>Shadow DOM</code>。在 <code>dom</code> 元素列表中，都是我们写的看得见的元素。其实在构建 <code>dom</code> 的时候，也存在一部分东西是我们没写的，但是实际存在而被浏览器隐藏起来的元素。如果想看到这些元素就可以通过勾选 <code>Settings</code> -&gt; <code>Preferences</code> -&gt; <code>Elements</code> 下的 <code>Show user agent shadow DOM</code> 来显示这样构建的元素。这样一来就可以很好的这些元素的样式了。</p><p>  <img src="../../../../images/201703/chrome_07.png" alt="shadow-dom"></p></li><li><p>给元素添加状态。元素有4种用户行为状态：:<code>active</code>、<code>:hover</code>、<code>:focus</code>、<code>:visited</code>。可以通过2中方式主动触发用户行为。选中一个元素，然后右键点击选中一个状态即可，如果有设置对于的样式，就可以看到区别。另外一种方式是在 <code>Styles</code>面板中进行设置。</p><p>  <img src="../../../../images/201703/chrome_08.png" alt="ele-state"></p></li><li><p>使用 <code>Tab</code> 键可以在 <code>CSS</code> 样式规则中进行遍历选定，选定的目标包括：选择器、属性和属性值。如果想跳回上一个目标，使用 <code>Shift + Tab</code>。但是再使用快捷键切换选定之前需要先让光标在 <code>Styles</code> 面板，处于输入状态即可。</p></li></ul><h2 id="Console面板篇"><a href="#Console面板篇" class="headerlink" title="Console面板篇"></a>Console面板篇</h2><ul><li><p>使用 <code>$0-$4</code> 选择元素。<code>$0</code> 返回最后一次选择的元素，<code>$1</code> 返回仅在最后一次之前选择的元素，以此类推。<code>$(selector)</code> 返回带有指定 <code>CSS</code> 选择器的第一个DOM元素的引用。<code>$$(selector)</code> 返回 <code>CSS</code> 选择所有匹配的元素数组。</p><p>  <img src="../../../../images/201703/chrome_09.png" alt="$_selector"></p>  <div class="tip"><br>      如果页面使用了类 <code>Jquery</code> 库，则 <code>$(selector)</code> 功能将被覆盖， <code>$</code> 将与该库的实现对应。<br>  </div></li><li><p>一些实用的方法:</p><ul><li><code>console.log()</code>、<code>console.info()</code>、<code>console.warn()</code>、<code>console.error()</code>打印不同的状态信息</li><li><p>使用CSS设置控制台输出样式，利用CSS格式说明符%c。</p><p>  <img src="../../../../images/201703/chrome_17.png" alt="css-format"></p></li><li><p><code>copy(object)</code>，将指定对象的字符串表示复制到剪贴板。</p></li><li><p><code>getEventListeners(object)</code>，返回一个在指定元素上绑定的所有事件监听器的数组。但是这里看不了事件的处理函数，也没有像 <code>Event Listeners</code> 面板那边 <code>show function definition</code> 那样的功能。</p><p>  <img src="../../../../images/201703/chrome_13.png" alt="ctrl+p"></p></li><li><p><code>inspect(elem)</code>， 跳转到 <code>Elements</code> 面板的指定元素节点</p></li></ul></li><li><p><code>console.time(str)</code> 和 <code>console.timeEnd(str)</code> 返回这中间间隔的时间。下图的 <code>4.24e+3ms</code> 是数字的科学计数法表示，表示的实际值是：<code>4.24*10*10*10ms</code>，即4.24秒。</p><p>  <img src="../../../../images/201703/chrome_12.png" alt="console.time"></p></li></ul><h2 id="Sources面板篇"><a href="#Sources面板篇" class="headerlink" title="Sources面板篇"></a>Sources面板篇</h2><ul><li><p><code>Ctrl + Shift + F</code>，根据文件内容查找所有站内资源文件，返回找出匹配的文件内容。这个功能很好用。比如我在别人的站点看到一个效果，但是不知道写到哪个文件里了，这个时候我就可以根据关键的 <code>className</code> 或者 <code>id</code> 把这个文件找出来。</p></li><li><p><code>Ctrl + P</code>，根据文件名查找所有站内资源文件。</p><p>  <img src="../../../../images/201703/chrome_11.png" alt="ctrl+p"></p></li><li><p>漂亮打印。对于 <code>Sources</code> 里的资源文件，可以将杂乱的或是压缩过的内容按照一定的缩进和换行规则进行打印输出。</p><p>  <img src="../../../../images/201703/chrome_14.png" alt="pretty-print"></p></li><li><p>在 <code>Sources</code> 面板中找到图片资源，然后在图片上右键即可获取图片的 <code>Data URI</code>。</p><p>  <img src="../../../../images/201703/chrome_15.png" alt="data-uri"></p></li><li><p>使用 <code>console.dir( ele )</code> 将 <code>DOM</code> 元素格式化为 <code>JavaScript</code> 对象</p><p>  <img src="../../../../images/201703/chrome_18.png" alt="console.dir"></p></li><li><p>在 <code>Sources</code> 面板编辑文件小技巧</p><ul><li>使用 <code>Ctrl + p</code> 打开输入框输入 <code>:20:30</code> 回车后，光标位置将跳转到当前文件的第20行第30列</li><li>使用使用 <code>Alt + -</code> 和 <code>Alt + =</code> 可以在上一个鼠标位置和下一个鼠标位置之间跳转</li><li>使用 <code>Ctrl +</code> 鼠标左键可以添加多个光标输入位置</li><li><p>使用 <code>Alt +</code> 鼠标拖动可以拉出一块矩形选区</p><p>  <img src="../../../../images/201703/chrome_16.png" alt="alt-move"></p></li></ul></li></ul><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul><li><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank" rel="noopener">chrome-devtools</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;chrome&lt;/code&gt; 浏览器是每个前端开发者最常用的浏览器，因为界面简洁友好，开发者工具功能强大且简单易用，大大提升了开发效率。所以很有必要了解 &lt;code&gt;chrome&lt;/code&gt; 开发者工具都有哪些很常用或实用的功能。&lt;br&gt;写这篇文章的时候，chrome的版本如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../../../../images/201703/chrome_01.png&quot; alt=&quot;chrome版本&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="web综合" scheme="https://datou-y.github.io/categories/web%E7%BB%BC%E5%90%88/"/>
-    
-    
-      <category term="chrome" scheme="https://datou-y.github.io/tags/chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo主题的安装和使用</title>
-    <link href="https://datou-y.github.io/posts/4a1d4f4f.html/"/>
-    <id>https://datou-y.github.io/posts/4a1d4f4f.html/</id>
-    <published>2018-06-04T07:20:21.000Z</published>
-    <updated>2019-05-28T11:59:26.173Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hexo博客框架有很多第三方主题，我们可以到<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题官网</a>去选取自己喜欢的主题,然后根据自己的喜好进行安装配置修改。我的博客用的主题是<a href="https://github.com/bulandent/hexo-theme-bubuzou" target="_blank" rel="noopener">bubuzou</a></p><h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><ul><li>官网下载好主题后放在博客的<code>themes</code>文件夹下</li><li>然后修改根目录<code>_config.yml</code>文件的<code>theme</code>配置为当前下载的主题文件夹名称</li><li>然后根据每个主题的使用文档修改下载的对应主题文件夹下的<code>_config.yml</code>来配置对应主题功能<div class="tip"><br>  这里我以<a href="https://bubuzou.com/" target="_blank" rel="noopener">bubuzou</a>主题为例<br></div></li></ul><a id="more"></a><p>配置这个主题需要注意的点</p><ul><li>他的评论，文章阅读次数，功能用的LeanCloud需要自己注册，对应的LeanCloud统计次数class是Timer不是Counter否则会出现访问次数没有</li><li><a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud官网</a></li></ul><blockquote><p>主题文档  <a href="https://github.com/bulandent/hexo-theme-bubuzou/blob/master/doc/doc-zh.md" target="_blank" rel="noopener">bubuzou</a></p></blockquote><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li><a href="https://blog.csdn.net/y_z_w123/article/details/78801096" target="_blank" rel="noopener">hexo的安装和主题的替换</a></li><li><a href="https://blog.csdn.net/xuezhisdc/article/details/53130328" target="_blank" rel="noopener">hexo教程系列</a> </li><li><a href="https://blog.csdn.net/lijing742180/article/details/87928554" target="_blank" rel="noopener">Hexo博客使用LeanCloud统计页面访问次数</a></li><li><a href="https://www.jianshu.com/p/b4b758ee81dd" target="_blank" rel="noopener">leanCloud的使用</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Hexo博客框架有很多第三方主题，我们可以到&lt;a href=&quot;https://hexo.io/themes/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;主题官网&lt;/a&gt;去选取自己喜欢的主题,然后根据自己的喜好进行安装配置修改。我的博客用的主题是&lt;a href=&quot;https://github.com/bulandent/hexo-theme-bubuzou&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bubuzou&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;简单使用&quot;&gt;&lt;a href=&quot;#简单使用&quot; class=&quot;headerlink&quot; title=&quot;简单使用&quot;&gt;&lt;/a&gt;简单使用&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;官网下载好主题后放在博客的&lt;code&gt;themes&lt;/code&gt;文件夹下&lt;/li&gt;
-&lt;li&gt;然后修改根目录&lt;code&gt;_config.yml&lt;/code&gt;文件的&lt;code&gt;theme&lt;/code&gt;配置为当前下载的主题文件夹名称&lt;/li&gt;
-&lt;li&gt;然后根据每个主题的使用文档修改下载的对应主题文件夹下的&lt;code&gt;_config.yml&lt;/code&gt;来配置对应主题功能&lt;div class=&quot;tip&quot;&gt;&lt;br&gt;  这里我以&lt;a href=&quot;https://bubuzou.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bubuzou&lt;/a&gt;主题为例&lt;br&gt;&lt;/div&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="博客" scheme="https://datou-y.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="blog" scheme="https://datou-y.github.io/tags/blog/"/>
-    
-      <category term="Hexo Themes" scheme="https://datou-y.github.io/tags/Hexo-Themes/"/>
     
   </entry>
   

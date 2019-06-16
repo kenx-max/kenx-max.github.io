@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>IDEA工具开发使用@Autowired注解报错解决方案 </title>
+      <link href="/posts/794ce61d.html/"/>
+      <url>/posts/794ce61d.html/</url>
+      
+        <content type="html"><![CDATA[<p>使用<code>IDEA</code>工具进行开发的时候,需要<code>@Autowired</code>自动注解<code>bean</code>时会报红线,但是项目依然能够运行<br>点击<code>File--》Project Structure...--》Facets</code>删除右边对应的<code>spring</code>模块<br>对应的<code>IDEA</code>版本仅限于如下版本<br><img src="https://ae01.alicdn.com/kf/HTB1CSx7c21H3KVjSZFH762KppXau.png" alt><br><a id="more"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> problem </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Boot 2.x(四):整合Mybatis的四种方式</title>
+      <link href="/posts/7f83a289.html/"/>
+      <url>/posts/7f83a289.html/</url>
+      
+        <content type="html"><![CDATA[<p>目前的大环境下，使用<code>Mybatis</code>作为持久层框架还是占了绝大多数的，下面我们来说一下使用<code>Mybatis</code>整合<code>Spring Boot</code>的几种姿势。<br><a id="more"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Boot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Boot入门快速搭建web项目</title>
+      <link href="/posts/914fc93.html/"/>
+      <url>/posts/914fc93.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是Spring-Boot"><a href="#什么是Spring-Boot" class="headerlink" title="什么是Spring Boot"></a>什么是Spring Boot</h2><p><code>Spring Boot</code> 是由 <code>Pivotal</code> 团队提供的全新框架，其设计目的是用来简化新 <code>Spring</code> 应用的初始搭建以及开发过程。该框架使用了<code>特定的方式</code>来进行配置，从而使开发人员不再需要定义样板化的配置。用我的话来理解，就是 <code>Spring Boot</code> 其实不是什么新的框架，它默认配置了很多框架的使用方式，就像 <code>Maven</code> 整合了所有的 <code>Jar</code> 包，<code>Spring Boot</code> 整合了所有的框架。</p><h2 id="使用-Spring-Boot-有什么好处"><a href="#使用-Spring-Boot-有什么好处" class="headerlink" title="使用 Spring Boot 有什么好处"></a>使用 Spring Boot 有什么好处</h2><ul><li>配置 <code>web.xml</code>，加载 <code>Spring</code> 和 <code>Spring mvc</code></li><li>配置数据库连接、配置 <code>Spring</code> 事务</li><li>配置加载配置文件的读取，开启注解</li><li>配置日志文件</li><li>…</li><li>配置完成之后部署 <code>Tomcat</code> 调试</li></ul><p>现在非常流行微服务，如果我这个项目仅仅只是需要发送一个邮件，如果我的项目仅仅是生产一个积分；我都需要这样折腾一遍!</p><p>但是如果使用 <code>Spring Boot</code> 呢？<br>很简单，我仅仅只需要非常少的几个配置就可以迅速方便的搭建起来一套 Web 项目或者是构建一个微服务！</p><p>使用 <code>Spring Boot</code> 到底有多爽，用下面这幅图来表达<br><img src="https://ae01.alicdn.com/kf/HTB1DT75cRCw3KVjSZFlq6AJkFXaO.jpg" alt></p><a id="more"></a><h2 id="官网在线搭建"><a href="#官网在线搭建" class="headerlink" title="官网在线搭建"></a>官网在线搭建</h2><ol><li><p><a href="http://start.spring.io/" target="_blank" rel="noopener">访问官网 https://start.spring.io/</a></p></li><li><p>选择构建工具 <code>Maven Project</code>、语言<code>Java</code>、<code>Spring Boot</code>版本 <code>Project Metadata</code> 工程基本信息</p></li></ol><p><img src="https://ae01.alicdn.com/kf/HTB1AtQ1cLWG3KVjSZFg762TspXa2.png" alt></p><ol start="3"><li><p>点击 <code>Generate Project</code>下载项目压缩包</p></li><li><p>解压后，使用 <code>Idea</code> 导入项目，<code>File -&gt; New -&gt; Model from Existing Source.. -&gt;</code>选择解压后的文件夹 -&gt;<code>OK，</code>选择 <code>Maven 一路 Next，OK done!</code></p></li></ol><h2 id="通过Intellij-IDEA搭建"><a href="#通过Intellij-IDEA搭建" class="headerlink" title="通过Intellij IDEA搭建"></a>通过Intellij IDEA搭建</h2><ol><li>选择 <code>File -&gt; New —&gt; Project…</code> 弹出新建项目的框</li><li>选择 <code>Spring Initializr，Next</code> 也会出现上述类似的配置界面，Idea 帮我们做了集成</li><li>填写相关内容后，点击 <code>Next</code> 选择依赖的包再点击 <code>Next</code>，最后确定信息无误点击 <code>Finish</code></li><li>如果使用的是 <code>Eclipse，</code> <code>Import -&gt; Existing Maven Projects -&gt; Next -&gt;</code>选择解压后的文件夹 -&gt; <code>Finsh，OK done!</code></li></ol><h2 id="项目结构介绍"><a href="#项目结构介绍" class="headerlink" title="项目结构介绍"></a>项目结构介绍</h2><p><img src="https://ae01.alicdn.com/kf/HTB1FEo7cR1D3KVjSZFy762uFpXad.png" alt></p><p>如上图所示，Spring Boot 的基础结构共三个文件:</p><ul><li><code>src/main/java</code> 程序开发以及主程序入口</li><li><code>src/main/resources</code> 配置文件</li><li><code>src/test/java</code> 测试程序</li></ul><p>另外， <code>Spring Boot</code> 建议的目录结果如下：<br><code>root package</code> 结构：<code>com.example.myproject</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">com</span><br><span class="line">  +- example</span><br><span class="line">    +- myproject</span><br><span class="line">      +- Application.java</span><br><span class="line">      |</span><br><span class="line">      +- model</span><br><span class="line">      |  +- Customer.java</span><br><span class="line">      |  +- CustomerRepository.java</span><br><span class="line">      |</span><br><span class="line">      +- service</span><br><span class="line">      |  +- CustomerService.java</span><br><span class="line">      |</span><br><span class="line">      +- controller</span><br><span class="line">      |  +- CustomerController.java</span><br><span class="line">      |</span><br></pre></td></tr></table></figure></p><ol><li><code>Application.java</code> 建议放到根目录下面,主要用于做一些框架配置</li><li><code>model</code> 目录主要用于实体与数据访问层（<code>Repository</code>）</li><li><code>service</code> 层主要是业务类代码</li><li><code>controller</code> 负责页面访问控制</li></ol><p>采用默认配置可以省去很多配置，当然也可以根据自己的喜欢来进行更改<br>最后，启动 Application main 方法，至此一个 Java 项目搭建好了！</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol><li><code>pom.xml</code>中添加支持<code>web</code>的模块：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li></ol><p><code>pom.xml</code> 文件中默认有两个模块:<br><code>spring-boot-starter</code> ：核心模块，包括自动配置支持、日志和 <code>YAML</code><br><code>spring-boot-starter-test</code> ：测试模块，包括 <code>JUnit、Hamcrest、Mockito</code><br><code>spring-boot-starter-web</code> 自动依赖了 <code>spring-boot-starter</code>加了<code>web</code>模块后可以去掉<code>spring-boot-starter</code>模块</p><ol start="2"><li>编写 Controller 内容：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p><code>@RestController</code> 的意思就是 <code>Controller</code> 里面的方法都以 <code>json</code> 格式输出，不用再写什么 <code>jackjson</code> 配置的了！</p><ol start="3"><li>启动主程序，打开浏览器访问 <code>http://localhost:8080/hello</code>，就可以看到效果了，有木有很简单！</li></ol><p><div class="tip"><a href="https://github.com/daTou-Y/spring-boot-examples/tree/master/spring-boot-helloWorld" target="_blank" rel="noopener">GitHub示例代码</a><div></div></div></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/qq_27317475/article/details/81119098" target="_blank" rel="noopener">SpringBoot入门，快速搭建简单Web应用环境</a></li><li><a href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html" target="_blank" rel="noopener">Spring Boot(一)：入门篇</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Boot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java中数据类型分类</title>
       <link href="/posts/2b16cdcb.html/"/>
       <url>/posts/2b16cdcb.html/</url>
