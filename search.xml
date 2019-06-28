@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>http 请求对应的状态码</title>
+      <link href="/posts/a8e83838.html/"/>
+      <url>/posts/a8e83838.html/</url>
+      
+        <content type="html"><![CDATA[<p>开发中良好的调试可以让你飞一般的写程序</p><h2 id="2-开头-（请求成功）表示成功处理了请求的状态代码。"><a href="#2-开头-（请求成功）表示成功处理了请求的状态代码。" class="headerlink" title="2**开头 （请求成功）表示成功处理了请求的状态代码。"></a>2**开头 （请求成功）表示成功处理了请求的状态代码。</h2><ul><li>200 （成功） 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。</li><li>201 （已创建） 请求成功并且服务器创建了新的资源。</li><li>202 （已接受） 服务器已接受请求，但尚未处理。</li><li>203 （非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。</li><li>204 （无内容） 服务器成功处理了请求，但没有返回任何内容。</li><li>205 （重置内容） 服务器成功处理了请求，但没有返回任何内容。</li><li>206 （部分内容） 服务器成功处理了部分 GET 请求。<a id="more"></a></li></ul><h2 id="3-开头-（请求被重定向）表示要完成请求，需要进一步操作。-通常，这些状态代码用来重定向。"><a href="#3-开头-（请求被重定向）表示要完成请求，需要进一步操作。-通常，这些状态代码用来重定向。" class="headerlink" title="3** 开头 （请求被重定向）表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。"></a>3** 开头 （请求被重定向）表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</h2><ul><li>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</li><li>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。</li><li>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</li><li>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。</li><li>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。</li><li>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。</li><li>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</li></ul><h2 id="4-开头-（请求错误）这些状态代码表示请求可能出错，妨碍了服务器的处理。"><a href="#4-开头-（请求错误）这些状态代码表示请求可能出错，妨碍了服务器的处理。" class="headerlink" title="4**开头 （请求错误）这些状态代码表示请求可能出错，妨碍了服务器的处理。"></a>4**开头 （请求错误）这些状态代码表示请求可能出错，妨碍了服务器的处理。</h2><ul><li>400 （错误请求） 服务器不理解请求的语法。</li><li>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。</li><li>403 （禁止） 服务器拒绝请求。</li><li>404 （未找到） 服务器找不到请求的网页。</li><li>405 （方法禁用） 禁用请求中指定的方法。</li><li>406 （不接受） 无法使用请求的内容特性响应请求的网页。</li><li>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。</li><li>408 （请求超时） 服务器等候请求时发生超时。</li><li>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。</li><li>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。</li><li>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。</li><li>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。</li><li>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。</li><li>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。</li><li>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。</li><li>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。</li><li>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。</li></ul><h2 id="5-开头（服务器错误）这些状态代码表示服务器在尝试处理请求时发生内部错误。-这些错误可能是服务器本身的错误，而不是请求出错。"><a href="#5-开头（服务器错误）这些状态代码表示服务器在尝试处理请求时发生内部错误。-这些错误可能是服务器本身的错误，而不是请求出错。" class="headerlink" title="5**开头（服务器错误）这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。"></a>5**开头（服务器错误）这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</h2><ul><li>500 （服务器内部错误） 服务器遇到错误，无法完成请求。</li><li>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。</li><li>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。</li><li>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。</li><li>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。</li><li>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://www.cnblogs.com/gitnull/p/9532129.html" target="_blank" rel="noopener">常见的HTTP状态码(HTTP Status Code)</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> web综合 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java读取配置文件信息</title>
+      <link href="/posts/8988b28b.html/"/>
+      <url>/posts/8988b28b.html/</url>
+      
+        <content type="html"><![CDATA[<p>java读取配置文件信息</p><ol><li>ClassName.class.getClassLoader().getResourceAsStream(““)读取<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">InputStream in = DbUtil.class.getClassLoader().getResourceAsStream(<span class="string">"jdbc.properties"</span>);</span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">driverClass = properties.getProperty(<span class="string">"ojdbc.driver"</span>);</span><br></pre></td></tr></table></figure></li></ol><ul><li>表示读取类路径<code>classpath</code>下的<code>jdbc.properties</code>文件一般对应srcmu’l<a id="more"></a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> properties </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker入门使用</title>
+      <link href="/posts/860b62bb.html/"/>
+      <url>/posts/860b62bb.html/</url>
+      
+        <content type="html"><![CDATA[<p>Docker 是一种“轻量级”容器技术，它几乎动摇了传统虚拟化技术的地位，现在国内外已经有越来越多的公司开始逐步使用 Docker 来替换现有的虚拟化平台了</p><h2 id="docker-常用命名"><a href="#docker-常用命名" class="headerlink" title="docker 常用命名"></a>docker 常用命名</h2><h3 id="安装镜像软件"><a href="#安装镜像软件" class="headerlink" title="安装镜像软件"></a>安装镜像软件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull</span><br></pre></td></tr></table></figure><h3 id="查看本地所有的镜像软件"><a href="#查看本地所有的镜像软件" class="headerlink" title="查看本地所有的镜像软件"></a>查看本地所有的镜像软件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker images [OPTIONS] [REPOSITORY]</span><br><span class="line">-a，–all=<span class="keyword">false</span>，显示所有镜像</span><br><span class="line">-f，–filter=[]，显示时过滤条件</span><br><span class="line">–no-trunc=<span class="keyword">false</span>，指定不使用截断的形式显示数据</span><br><span class="line">-q，–quiet=<span class="keyword">false</span>，只显示镜像的唯一id</span><br></pre></td></tr></table></figure><h3 id="启动新容器"><a href="#启动新容器" class="headerlink" title="启动新容器"></a>启动新容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">docker run &lt;相关参数&gt; &lt;镜像 ID&gt; &lt;初始命令&gt;</span><br><span class="line"></span><br><span class="line"> -i：表示以“交互模式”运行容器</span><br><span class="line"> -t：表示容器启动后会进入其命令行</span><br><span class="line"> -v：表示需要将本地哪个目录挂载到容器中，格式：-v &lt;宿主机目录&gt;:&lt;容器目录&gt;</span><br><span class="line"> --hostname ：指定容器中绑定的域名，会在创建镜像仓库的时候使用到，这里绑定gitlab.xxx.com</span><br><span class="line"> --publish：端口映射；容器内的<span class="number">443</span>,<span class="number">80</span>,<span class="number">22</span>端口分别映射到宿主机的<span class="number">444</span>,<span class="number">81</span>,<span class="number">23</span>端口</span><br><span class="line"> --volume ：挂载数据卷，映射到容器中去的容器外部存储空间</span><br><span class="line"></span><br><span class="line"> 启动交互式容器：docker run -t -i –name=自定义名称 IMAGE_NAME /bin/bash</span><br><span class="line"> -i –interactive=<span class="keyword">true</span> | <span class="keyword">false</span>，默认是<span class="keyword">false</span></span><br><span class="line"> -t –tty=<span class="keyword">true</span> | <span class="keyword">false</span>，默认是<span class="keyword">false</span></span><br><span class="line"> –name 给启动的容器自定义名称，方便后续的容器选择操作</span><br><span class="line"> -d (Detached)：表示容器将以后台模式运行，所有I/O数据只能通过网络资源或者共享卷组来进行交互。</span><br><span class="line"> -e MYSQL_ROOT_PASSWORD=<span class="number">123456</span>：-e 表示设置环境变量，此处设置了 mysql root 用户的初始密码为 <span class="number">123456</span>。</span><br><span class="line"></span><br><span class="line"> 例子</span><br><span class="line"> docker run -ti --name mycentos centos /bin/bash 表示以“交互模式”</span><br><span class="line"> 运行容器容器启动后会进入其命令行</span><br><span class="line"> docker exec -ti mycentos /bin/bash 在mycentos中打开/bin/bash命令行界面</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="重新启动停止的容器"><a href="#重新启动停止的容器" class="headerlink" title="重新启动停止的容器"></a>重新启动停止的容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">实际使用时，没必要每次都重新启动一个新的容器，我们可以重新启动之前创建的容器，现实情况也需要我们这样使用。</span><br><span class="line">docker start -i haha</span><br></pre></td></tr></table></figure><h3 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps [-a] [-l]</span><br><span class="line">docker ps 列出正在运行的容器</span><br><span class="line">-a all 列出所有容器</span><br><span class="line">-l latest 列出最近的容器</span><br></pre></td></tr></table></figure><h3 id="查看指定容器"><a href="#查看指定容器" class="headerlink" title="查看指定容器"></a>查看指定容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker inspect name | id</span><br><span class="line">name指代具体的容器名称，id则是容器的唯一id标识。inspect命令可以详细的展示出容器的具体信息</span><br></pre></td></tr></table></figure><h3 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在启动界面 按 exit,或者docker stop 对应容器 CONTAINER ID</span><br></pre></td></tr></table></figure><h3 id="删除停止的容器"><a href="#删除停止的容器" class="headerlink" title="删除停止的容器"></a>删除停止的容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker rm name | id</span><br><span class="line">docker rm thirsty_kepler</span><br><span class="line">docker rm upbeat_albattani</span><br></pre></td></tr></table></figure><h3 id="守护式容器"><a href="#守护式容器" class="headerlink" title="守护式容器"></a>守护式容器</h3><p>交互式容器在运行完命令退出后即停止，而实际中我们常常需要能够长时间运行，即使退出也能后台运行的容器，而守护式容器具备这一功能。守护式容器具有：</p><ol><li>能够长期运行；</li><li>没有交互式会话；</li><li>适合于运行应用程序和服务。</li></ol><p>以守护形式运行容器<br>我们执行完需要的操作退出容器时，不要使用exit退出，可以利用Ctrl+P Ctrl+Q代替，以守护式形式推出容器。</p><p>附加到运行中的容器<br>退出正在运行的容器，想要再次进入，需要使用<code>attach命令：docker attach name | id</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach haha</span><br></pre></td></tr></table></figure></p><h3 id="查看容器日志"><a href="#查看容器日志" class="headerlink" title="查看容器日志"></a>查看容器日志</h3><p>当守护式容器在后台运行时，我们可以利用docker的日志命令查看其输出：<code>docker logs [-f] [-t] [–tail] IMAGE_NAME</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-f –follows=<span class="keyword">true</span> | <span class="keyword">false</span>，默认是<span class="keyword">false</span>，显示更新</span><br><span class="line">-t –timestamps=<span class="keyword">true</span> | <span class="keyword">false</span>，默认是<span class="keyword">false</span>，显示时间戳</span><br><span class="line">–tail=“all” | 行数，显示最新行数的日志</span><br></pre></td></tr></table></figure></p><h3 id="查看容器内进程"><a href="#查看容器内进程" class="headerlink" title="查看容器内进程"></a>查看容器内进程</h3><p>对运行的容器查看其进程：<code>docker top IMAGE_NAME</code></p><h3 id="强制停止"><a href="#强制停止" class="headerlink" title="强制停止"></a>强制停止</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill 容器名</span><br></pre></td></tr></table></figure><h3 id="容器的端口映射"><a href="#容器的端口映射" class="headerlink" title="容器的端口映射"></a>容器的端口映射</h3><p>命令：<code>run [-P] [-p]</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-P，–publish-all=<span class="keyword">true</span> | <span class="keyword">false</span>，大写的P表示为容器暴露的所有端口进行映射；</span><br><span class="line">-p，–publish=[]，小写的p表示为容器指定的端口进行映射，有四种形式：</span><br><span class="line"></span><br><span class="line">    containerPort：只指定容器的端口，宿主机端口随机映射；</span><br><span class="line">    hostPort:containerPort：同时指定容器与宿主机端口一一映射；</span><br><span class="line">    ip::containerPort：指定ip和容器的端口；</span><br><span class="line">    ip:hostPort:containerPort：指定ip、宿主机端口以及容器端口。</span><br><span class="line">例如：</span><br><span class="line">docker run -p <span class="number">80</span> -i -t ubuntu /bin/bash</span><br><span class="line">docker run -p <span class="number">8080</span>:<span class="number">80</span> -i -t ubuntu /bin/bash</span><br><span class="line">docker run -p <span class="number">0.0</span>.0.0::<span class="number">80</span> -i -t ubuntu /bin/bash</span><br><span class="line">docker run -p <span class="number">0.0</span>.0.0:<span class="number">8080</span>:<span class="number">80</span> -i -t ubuntu /bin/bash</span><br><span class="line"> --privileged=<span class="keyword">true</span>，以特权方式启动容器</span><br></pre></td></tr></table></figure></p><h2 id="Mac-docker-配置"><a href="#Mac-docker-配置" class="headerlink" title="Mac docker 配置"></a>Mac docker 配置</h2><ol><li><p>共享文件设置</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">点击 Preferences &gt;&gt; File Sharing</span><br></pre></td></tr></table></figure></li><li><p>配置国内镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">点击 Preferences &gt;&gt; Daemon &gt;&gt; Registry mirrors</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/weixin_38416579/article/details/80859265" target="_blank" rel="noopener">Mac上Docker使用例子</a></li><li><a href="https://blog.csdn.net/bskfnvjtlyzmv867/article/details/81044217" target="_blank" rel="noopener">Docker——入门实战</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA工具开发使用@Autowired注解报错解决方案 </title>
       <link href="/posts/794ce61d.html/"/>
       <url>/posts/794ce61d.html/</url>
