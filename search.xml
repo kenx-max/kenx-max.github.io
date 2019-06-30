@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>centos使用问题查询</title>
-      <link href="/posts/3997c9eb.html/"/>
-      <url>/posts/3997c9eb.html/</url>
+      <title>linux 常用命令的使用</title>
+      <link href="/posts/6627048.html/"/>
+      <url>/posts/6627048.html/</url>
       
-        <content type="html"><![CDATA[<p><img src="https://ae01.alicdn.com/kf/HTB1LZv6bLBj_uVjSZFpq6A0SXXaM.jpg" alt></p><h2 id="centOs使用常用命令"><a href="#centOs使用常用命令" class="headerlink" title="centOs使用常用命令"></a>centOs使用常用命令</h2><h3 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h3><ul><li>查看网卡名称<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure></li></ul><h2 id="centos系统目录结构"><a href="#centos系统目录结构" class="headerlink" title="centos系统目录结构"></a>centos系统目录结构</h2><p><div class="tip"><br>CentOS的目录大体上可分为四类：管理类、用户类、应用程序类、信息类文件目录。<br></div><br><a id="more"></a></p><h3 id="管理类目录"><a href="#管理类目录" class="headerlink" title="管理类目录"></a>管理类目录</h3><ul><li><code>/boot</code><br>　　linux的内核及引导系统程序所需要的文件目录</li><li><code>/bin</code><br>　　存放标准 linux 的工具，在终端里输入ls，系统就系统将会到该目录查看是否存在该命令程序。</li><li><code>/sbin</code><br>　　大多是涉及系统管理的命令的存放，是超级权限用户root的可执行命令存放地，普通用户无权限执行这个目录下的命令</li><li><code>/var</code><br>　　这个目录的内容是经常变动的，用来存储经常被修改的文件，如日志、数据文件、邮箱等</li><li><code>/etc</code><br>　　主要存放系统配置方面的文件</li><li><code>/dev</code><br>　　主要存放与设备有关的文件<br><code>/mnt</code><br>　　这个目录一般是用于存放挂载储存设备的挂载目录的，比如有cdrom 等目录。可以参看/etc/fstab的定义</li></ul><h3 id="用户类目录"><a href="#用户类目录" class="headerlink" title="用户类目录"></a>用户类目录</h3><ul><li><code>/root</code><br>　　系统管理员目录</li><li><code>/home</code><br>　　主要存放个人数据</li></ul><h3 id="应用程序类目录："><a href="#应用程序类目录：" class="headerlink" title="应用程序类目录："></a>应用程序类目录：</h3><ul><li><code>/lib</code><br>　　该目录用来存放系统动态链接共享库，几乎所有的应用程序都会用到该目录下的共享库</li><li><code>/tmp</code><br>　　临时目录，有些linux会定期清理</li><li><code>/usr</code><br>　　存放一些不适合放在/bin 或 /etc 目录下的额外工具，如个人安装的程序或工具</li><li><code>/usr/local</code><br>　　主要存放那些手动安装的软件，</li><li><code>/usr/bin</code><br>　　用于存放程序</li><li><code>/usr/share</code><br>　　用于存放一些共享数据</li><li><code>/usr/lib</code><br>　　存放一些不能不能直接运行，但却是许多程序运行所必需的一些函数库文件</li><li><code>/opt</code><br>　　主要存放可选程序，直接删除程序不影响系统其设置。安装到/opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面</li></ul><h3 id="信息类目录："><a href="#信息类目录：" class="headerlink" title="信息类目录："></a>信息类目录：</h3><ul><li><code>/lost+found</code><br>　　在ext2或ext3文件系统中，当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。但当突然停电、或者非正常关机后，有些文件就临时存放在这里。</li><li><code>/proc</code><br>　　操作系统运行时，进程信息及内核信息（比如cpu、硬盘分区、内存信息等）存放在这里</li></ul><h3 id="其他重要目录："><a href="#其他重要目录：" class="headerlink" title="其他重要目录："></a>其他重要目录：</h3><ul><li><code>/etc/rc.d</code><br>　　放置开机和关机的脚本。</li><li><code>/etc/rc.d/init.d</code><br>　　放置启动脚本</li><li><code>/etc/xinetd.d</code><br>　　配置<code>xinetd.conf</code>可以配置启动其他额外服务。</li><li><code>/usr/include</code><br>　　一些<code>distribution</code>套件的头文件放置目录，安装程序时可能会用到。</li><li><code>/usr/lib*</code><br>　　套件的程序库</li><li><code>/usr/local</code><br>　　默认的软件安装目录。</li><li><code>/usr/share/doc</code><br>　　系统说明文件的放置目录</li><li><code>/usr/share/man</code><br>　　程序说明文件放置目录</li><li><code>/usr/src</code><br>　　内核源代码目录</li><li><p><code>/usr/X11R6</code><br>　　X的存放目录</p></li><li><p><code>/：</code><br>　　根目录，一般根目录下只存放目录，不要存放文件，<code>/etc、/bin、/dev、/lib、/sbin</code>应该和根目录放置在一个分区中</p></li><li><code>/bin:/usr/bin:</code><br>　　可执行二进制文件的目录，如常用的命令<code>ls、tar、mv、cat</code>等。</li><li><code>/boot：</code><br>　　放置linux系统启动时用到的一些文件。<code>/boot/vmlinuz</code>为<code>linux</code>的内核文件，以及<code>/boot/gurb。</code>建议单独分区，分区大小100M即可</li><li><code>/dev：</code><br>　　存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱<code>mount /dev/cdrom /mnt。</code></li><li><code>/etc：</code><br>　　系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有<code>/etc/inittab、/etc/fstab、/etc/init.d、/etc/X11、/etc/sysconfig、/etc/xinetd.d</code>修改配置文件之前记得备份。注：<code>/etc/X11</code>存放与<code>x windows</code>有关的设置。</li><li><code>/home：</code><br>　　系统默认的用户家目录，新增用户账号时，用户的家目录都存放在此目录下，~表示当前用户的家目录，~test表示用户<code>test</code>的家目录。建议单独分区，并设置较大的磁盘空间，方便用户存放数据</li><li><code>/lib:/usr/lib:/usr/local/lib：</code><br>　　系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助，比较重要的目录为<code>/lib/modules。</code></li><li><code>/lost+fount：</code><br>　　系统异常产生错误时，会将一些遗失的片段放置于此目录下，通常这个目录会自动出现在装置目录下。如加载硬盘于<code>/disk</code> 中，此目录下就会自动产生目录<code>/disk/lost+found</code></li><li><code>/mnt:/media：</code><br>　　光盘默认挂载点，通常光盘挂载于<code>/mnt/cdrom</code>下，也不一定，可以选择任意位置进行挂载。</li><li><code>/opt：</code><br>　　给主机额外安装软件所摆放的目录。如：FC4使用的Fedora 社群开发软件，如果想要自行安装新的KDE 桌面软件，可以将该软件安装在该目录下。以前的 <code>Linux</code>系统中，习惯放置在 <code>/usr/local</code> 目录下</li><li><code>/proc：</code><br>　　此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有<code>/proc/cpuinfo、/proc/interrupts、/proc/dma、/proc/ioports、/proc/net/*</code>等</li><li><code>/root：</code><br>　　系统管理员<code>root</code>的家目录，系统第一个启动的分区为/，所以最好将<code>/root</code>和/放置在一个分区下。<br><code>/sbin:/usr/sbin:/usr/local/sbin：</code><br>　　放置系统管理员使用的可执行命令，如fdisk、shutdown、mount等。与/bin不同的是，这几个目录是给系统管理员root使用的命令，一般用户只能”查看”而不能设置和使用。</li><li><code>/tmp：</code><br>　　一般用户或正在执行的程序临时存放文件的目录,任何人都可以访问,重要数据不可放置在此目录下</li><li><code>/srv：</code><br>　　服务启动之后需要访问的数据目录，如www服务需要访问的网页数据存放在/srv/www内</li><li><code>/usr：</code><br>　　应用程序存放目录， <code>/usr/bin</code> 存放应用程序， <code>/usr/share</code>存放共享数据， <code>/usr/lib</code> 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。 <code>/usr/local:</code>存放软件升级包。 <code>/usr/share/doc:</code> 系统说明文件存放目录。 <code>/usr/share/man:</code>程序说明文件存放目录，使用 man ls时会查询<code>/usr/share/man/man1/ls.1.gz</code>的内容建议单独分区，设置较大的磁盘空间</li><li><code>/var：</code><br>　　放置系统执行过程中经常变化的文件，如随时更改的日志文件 <code>/var/log，/var/log/message：</code> 所有的登录文件存放目录， <code>/var/spool/mail：</code> 邮件存放的目录， <code>/var/run:</code> 程序或服务启动后，其<code>PID</code>存放在该目录下。建议单独分区，设置较大的磁盘空间</li></ul><h3 id="etc：-目录"><a href="#etc：-目录" class="headerlink" title="/etc： 目录"></a>/etc： 目录</h3><p>包含很多文件.许多网络配置文件也在/etc 中.</p><ul><li><code>/etc/rc or /etc/rc.d or /etc/rc*.d</code><br>　　启动、或改变运行级时运行的scripts或scripts的目录.</li><li><code>/etc/passwd</code><br>　　用户数据库，其中的域给出了用户名、真实姓名、家目录、加密的口令和用户的其他信息.</li><li><code>/etc/fstab</code><br>　　启动时mount -a命令(在/etc/rc 或等效的启动文件中)自动mount的文件系统列表. Linux下，也包括用swapon -a启用的swap区的信息.</li><li><code>/etc/group</code><br>　　类似/etc/passwd ，但说明的不是用户而是组.</li><li><code>/etc/inittab</code><br>　　init 的配置文件.</li><li><code>/etc/issue</code><br>　　getty 在登录提示符前的输出信息.通常包括系统的一段短说明或欢迎信息.内容由系统管理员确定.</li><li><code>/etc/motd</code><br>　　Message Of The Day，成功登录后自动输出.内容由系统管理员确定.经常用于通告信息，如计划关机时间的警告.</li><li><code>/etc/mtab</code><br>　　当前安装的文件系统列表.由scripts初始化，并由mount 命令自动更新.需要一个当前安装的文件系统的列表时使用，例如df 命令.</li><li><code>/etc/shadow</code><br>　　在安装了影子口令软件的系统上的影子口令文件.影子口令文件将/etc/passwd 文件中的加密口令移动到/etc/shadow 中，而后者只对root可读.这使破译口令更困难.</li><li><code>/etc/login.defs</code><br>　　login 命令的配置文件.</li><li><code>/etc/printcap</code><br>　　类似/etc/termcap ，但针对打印机.语法不同.<br>/etc/profile , /etc/csh.login , /etc/csh.cshrc<br>　　登录或启动时Bourne或C shells执行的文件.这允许系统管理员为所有用户建立全局缺省环境.</li><li><code>/etc/securetty</code><br>　　确认安全终端，即哪个终端允许root登录.一般只列出虚拟控制台，这样就不可能(至少很困难)通过modem或网络闯入系统并得到超级用户特权.</li><li><code>/etc/shells</code><br>　　列出可信任的shell.chsh 命令允许用户在本文件指定范围内改变登录shell.提供一台机器FTP服务的服务进程ftpd 检查用户shell是否列在 /etc/shells 文件中，如果不是将不允许该用户登录.</li><li><code>/etc/sysconfig</code><br>　　网络配置相关目录</li></ul><h3 id="usr：目录"><a href="#usr：目录" class="headerlink" title="/usr：目录"></a>/usr：目录</h3><p>/usr 文件系统经常很大，因为所有程序安装在这里. /usr 里的所有文件一般来自Linux distribution；本地安装的程序和其他东西在/usr/local下.这样可能在升级新版系统或新distribution时无须重新安装全部程序.</p><ul><li><code>/usr/etc</code><br>　　  存放设置文件</li><li><code>/usr/games</code><br>　　  存放游戏和教学文件</li><li><code>/usr/include</code><br>　　存放C开发工具的头文件</li><li><code>/usr/share</code><br>　　存放结构独立的数据</li><li><code>/usr/bin</code><br>　　几乎所有用户命令.有些命令在/bin 或/usr/local/bin 中.</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/qq_33858250/article/details/81839619" target="_blank" rel="noopener">CentOS7目录结构详细版</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>linux的发行的版本很多但是，命令行工具都是标准的<br><a id="more"></a></p><ul><li>mv<br>移动档案与目录，或更名</li><li>rm<br>移除档案或目录</li><li>cat<br>由第一行开始显示档案内容</li><li>tac<br>从最后一行开始显示：tac（可以看出 tac 是 cat 的倒着写）</li><li>nl<br>显示的时候，顺道输出行号</li><li><p>more<br>一页一页的显示档案内容</p></li><li><p>shutdown -r now<br>重启</p></li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://www.cnblogs.com/crazylqy/p/5818745.html" target="_blank" rel="noopener">linux常用基本命令</a></li></ul>]]></content>
       
       
       <categories>
@@ -19,6 +19,110 @@
       
       
         <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos 上安装docker</title>
+      <link href="/posts/f9c16e64.html/"/>
+      <url>/posts/f9c16e64.html/</url>
+      
+        <content type="html"><![CDATA[<p>Docker从1.13版本之后采用时间线的方式作为版本号，分为社区版CE和企业版EE。</p><p>社区版是免费提供给个人开发者和小型团体使用的，企业版会提供额外的收费服务，比如经过官方测试认证过的基础设施、容器、插件等。</p><p>社区版按照stable和edge两种方式发布，每个季度更新stable版本，如17.06，17.09；每个月份更新edge版本，如17.09，17.10。<br><a id="more"></a></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://www.cnblogs.com/yufeng218/p/8370670.html" target="_blank" rel="noopener">Centos7上安装docker</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos系统yum的使用</title>
+      <link href="/posts/732e476.html/"/>
+      <url>/posts/732e476.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="yum是什么"><a href="#yum是什么" class="headerlink" title="yum是什么"></a>yum是什么</h2><p>yum = Yellow dog Updater, Modified<br>主要功能是更方便的添加/删除/更新RPM包.<br>它能自动解决包的倚赖性问题.<br>它能便于管理大量系统的更新问题</p><h2 id="yum特点"><a href="#yum特点" class="headerlink" title="yum特点"></a>yum特点</h2><p>可以同时配置多个资源库(Repository)<br>简洁的配置文件(/etc/yum.conf<br>自动解决增加或删除rpm包时遇到的倚赖性问题<br>使用方便<br>保持与RPM数据库的一致性<br><a id="more"></a></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/yqj234/article/details/82990271" target="_blank" rel="noopener">CentOS yum的详细使用方法</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> system </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mac Pro 虚拟机VMware Fusion安装centos7.6无法连接网络</title>
+      <link href="/posts/ccff5e6d.html/"/>
+      <url>/posts/ccff5e6d.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol><li>超级用户进入<code>/etc/sysconfig/network-scripts</code>目录</li><li>修改 vi ifcfg-ens33文件<br><img src="https://ae01.alicdn.com/kf/HTB15y6udkxz61VjSZFr760eLFXa5.png" alt></li><li>重启虚拟机centos系统<a id="more"></a></li></ol><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="http://www.yihaomen.com/article/Architect/701.htm" target="_blank" rel="noopener">VMWare中安装Centos7, 并配置网络</a></li><li><a href="https://blog.csdn.net/cyl101816/article/details/82026678" target="_blank" rel="noopener">Linux——vi命令详解</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos目录结构</title>
+      <link href="/posts/3997c9eb.html/"/>
+      <url>/posts/3997c9eb.html/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://ae01.alicdn.com/kf/HTB1LZv6bLBj_uVjSZFpq6A0SXXaM.jpg" alt></p><h2 id="centos系统目录结构"><a href="#centos系统目录结构" class="headerlink" title="centos系统目录结构"></a>centos系统目录结构</h2><p><div class="tip"><br>CentOS的目录大体上可分为四类：管理类、用户类、应用程序类、信息类文件目录。<br></div><br><a id="more"></a></p><h3 id="管理类目录"><a href="#管理类目录" class="headerlink" title="管理类目录"></a>管理类目录</h3><ul><li><code>/boot</code><br>　　linux的内核及引导系统程序所需要的文件目录</li><li><code>/bin</code><br>　　存放标准 linux 的工具，在终端里输入ls，系统就系统将会到该目录查看是否存在该命令程序。</li><li><code>/sbin</code><br>　　大多是涉及系统管理的命令的存放，是超级权限用户root的可执行命令存放地，普通用户无权限执行这个目录下的命令</li><li><code>/var</code><br>　　这个目录的内容是经常变动的，用来存储经常被修改的文件，如日志、数据文件、邮箱等</li><li><code>/etc</code><br>　　主要存放系统配置方面的文件</li><li><code>/dev</code><br>　　主要存放与设备有关的文件<br><code>/mnt</code><br>　　这个目录一般是用于存放挂载储存设备的挂载目录的，比如有cdrom 等目录。可以参看/etc/fstab的定义</li></ul><h3 id="用户类目录"><a href="#用户类目录" class="headerlink" title="用户类目录"></a>用户类目录</h3><ul><li><code>/root</code><br>　　系统管理员目录</li><li><code>/home</code><br>　　主要存放个人数据</li></ul><h3 id="应用程序类目录："><a href="#应用程序类目录：" class="headerlink" title="应用程序类目录："></a>应用程序类目录：</h3><ul><li><code>/lib</code><br>　　该目录用来存放系统动态链接共享库，几乎所有的应用程序都会用到该目录下的共享库</li><li><code>/tmp</code><br>　　临时目录，有些linux会定期清理</li><li><code>/usr</code><br>　　存放一些不适合放在/bin 或 /etc 目录下的额外工具，如个人安装的程序或工具</li><li><code>/usr/local</code><br>　　主要存放那些手动安装的软件，</li><li><code>/usr/bin</code><br>　　用于存放程序</li><li><code>/usr/share</code><br>　　用于存放一些共享数据</li><li><code>/usr/lib</code><br>　　存放一些不能不能直接运行，但却是许多程序运行所必需的一些函数库文件</li><li><code>/opt</code><br>　　主要存放可选程序，直接删除程序不影响系统其设置。安装到/opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面</li></ul><h3 id="信息类目录："><a href="#信息类目录：" class="headerlink" title="信息类目录："></a>信息类目录：</h3><ul><li><code>/lost+found</code><br>　　在ext2或ext3文件系统中，当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。但当突然停电、或者非正常关机后，有些文件就临时存放在这里。</li><li><code>/proc</code><br>　　操作系统运行时，进程信息及内核信息（比如cpu、硬盘分区、内存信息等）存放在这里</li></ul><h3 id="其他重要目录："><a href="#其他重要目录：" class="headerlink" title="其他重要目录："></a>其他重要目录：</h3><ul><li><code>/etc/rc.d</code><br>　　放置开机和关机的脚本。</li><li><code>/etc/rc.d/init.d</code><br>　　放置启动脚本</li><li><code>/etc/xinetd.d</code><br>　　配置<code>xinetd.conf</code>可以配置启动其他额外服务。</li><li><code>/usr/include</code><br>　　一些<code>distribution</code>套件的头文件放置目录，安装程序时可能会用到。</li><li><code>/usr/lib*</code><br>　　套件的程序库</li><li><code>/usr/local</code><br>　　默认的软件安装目录。</li><li><code>/usr/share/doc</code><br>　　系统说明文件的放置目录</li><li><code>/usr/share/man</code><br>　　程序说明文件放置目录</li><li><code>/usr/src</code><br>　　内核源代码目录</li><li><p><code>/usr/X11R6</code><br>　　X的存放目录</p></li><li><p><code>/：</code><br>　　根目录，一般根目录下只存放目录，不要存放文件，<code>/etc、/bin、/dev、/lib、/sbin</code>应该和根目录放置在一个分区中</p></li><li><code>/bin:/usr/bin:</code><br>　　可执行二进制文件的目录，如常用的命令<code>ls、tar、mv、cat</code>等。</li><li><code>/boot：</code><br>　　放置linux系统启动时用到的一些文件。<code>/boot/vmlinuz</code>为<code>linux</code>的内核文件，以及<code>/boot/gurb。</code>建议单独分区，分区大小100M即可</li><li><code>/dev：</code><br>　　存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱<code>mount /dev/cdrom /mnt。</code></li><li><code>/etc：</code><br>　　系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有<code>/etc/inittab、/etc/fstab、/etc/init.d、/etc/X11、/etc/sysconfig、/etc/xinetd.d</code>修改配置文件之前记得备份。注：<code>/etc/X11</code>存放与<code>x windows</code>有关的设置。</li><li><code>/home：</code><br>　　系统默认的用户家目录，新增用户账号时，用户的家目录都存放在此目录下，~表示当前用户的家目录，~test表示用户<code>test</code>的家目录。建议单独分区，并设置较大的磁盘空间，方便用户存放数据</li><li><code>/lib:/usr/lib:/usr/local/lib：</code><br>　　系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助，比较重要的目录为<code>/lib/modules。</code></li><li><code>/lost+fount：</code><br>　　系统异常产生错误时，会将一些遗失的片段放置于此目录下，通常这个目录会自动出现在装置目录下。如加载硬盘于<code>/disk</code> 中，此目录下就会自动产生目录<code>/disk/lost+found</code></li><li><code>/mnt:/media：</code><br>　　光盘默认挂载点，通常光盘挂载于<code>/mnt/cdrom</code>下，也不一定，可以选择任意位置进行挂载。</li><li><code>/opt：</code><br>　　给主机额外安装软件所摆放的目录。如：FC4使用的Fedora 社群开发软件，如果想要自行安装新的KDE 桌面软件，可以将该软件安装在该目录下。以前的 <code>Linux</code>系统中，习惯放置在 <code>/usr/local</code> 目录下</li><li><code>/proc：</code><br>　　此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有<code>/proc/cpuinfo、/proc/interrupts、/proc/dma、/proc/ioports、/proc/net/*</code>等</li><li><code>/root：</code><br>　　系统管理员<code>root</code>的家目录，系统第一个启动的分区为/，所以最好将<code>/root</code>和/放置在一个分区下。<br><code>/sbin:/usr/sbin:/usr/local/sbin：</code><br>　　放置系统管理员使用的可执行命令，如fdisk、shutdown、mount等。与/bin不同的是，这几个目录是给系统管理员root使用的命令，一般用户只能”查看”而不能设置和使用。</li><li><code>/tmp：</code><br>　　一般用户或正在执行的程序临时存放文件的目录,任何人都可以访问,重要数据不可放置在此目录下</li><li><code>/srv：</code><br>　　服务启动之后需要访问的数据目录，如www服务需要访问的网页数据存放在/srv/www内</li><li><code>/usr：</code><br>　　应用程序存放目录， <code>/usr/bin</code> 存放应用程序， <code>/usr/share</code>存放共享数据， <code>/usr/lib</code> 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。 <code>/usr/local:</code>存放软件升级包。 <code>/usr/share/doc:</code> 系统说明文件存放目录。 <code>/usr/share/man:</code>程序说明文件存放目录，使用 man ls时会查询<code>/usr/share/man/man1/ls.1.gz</code>的内容建议单独分区，设置较大的磁盘空间</li><li><code>/var：</code><br>　　放置系统执行过程中经常变化的文件，如随时更改的日志文件 <code>/var/log，/var/log/message：</code> 所有的登录文件存放目录， <code>/var/spool/mail：</code> 邮件存放的目录， <code>/var/run:</code> 程序或服务启动后，其<code>PID</code>存放在该目录下。建议单独分区，设置较大的磁盘空间</li></ul><h3 id="etc：-目录"><a href="#etc：-目录" class="headerlink" title="/etc： 目录"></a>/etc： 目录</h3><p>包含很多文件.许多网络配置文件也在/etc 中.</p><ul><li><code>/etc/rc or /etc/rc.d or /etc/rc*.d</code><br>　　启动、或改变运行级时运行的scripts或scripts的目录.</li><li><code>/etc/passwd</code><br>　　用户数据库，其中的域给出了用户名、真实姓名、家目录、加密的口令和用户的其他信息.</li><li><code>/etc/fstab</code><br>　　启动时mount -a命令(在/etc/rc 或等效的启动文件中)自动mount的文件系统列表. Linux下，也包括用swapon -a启用的swap区的信息.</li><li><code>/etc/group</code><br>　　类似/etc/passwd ，但说明的不是用户而是组.</li><li><code>/etc/inittab</code><br>　　init 的配置文件.</li><li><code>/etc/issue</code><br>　　getty 在登录提示符前的输出信息.通常包括系统的一段短说明或欢迎信息.内容由系统管理员确定.</li><li><code>/etc/motd</code><br>　　Message Of The Day，成功登录后自动输出.内容由系统管理员确定.经常用于通告信息，如计划关机时间的警告.</li><li><code>/etc/mtab</code><br>　　当前安装的文件系统列表.由scripts初始化，并由mount 命令自动更新.需要一个当前安装的文件系统的列表时使用，例如df 命令.</li><li><code>/etc/shadow</code><br>　　在安装了影子口令软件的系统上的影子口令文件.影子口令文件将/etc/passwd 文件中的加密口令移动到/etc/shadow 中，而后者只对root可读.这使破译口令更困难.</li><li><code>/etc/login.defs</code><br>　　login 命令的配置文件.</li><li><code>/etc/printcap</code><br>　　类似/etc/termcap ，但针对打印机.语法不同.<br>/etc/profile , /etc/csh.login , /etc/csh.cshrc<br>　　登录或启动时Bourne或C shells执行的文件.这允许系统管理员为所有用户建立全局缺省环境.</li><li><code>/etc/securetty</code><br>　　确认安全终端，即哪个终端允许root登录.一般只列出虚拟控制台，这样就不可能(至少很困难)通过modem或网络闯入系统并得到超级用户特权.</li><li><code>/etc/shells</code><br>　　列出可信任的shell.chsh 命令允许用户在本文件指定范围内改变登录shell.提供一台机器FTP服务的服务进程ftpd 检查用户shell是否列在 /etc/shells 文件中，如果不是将不允许该用户登录.</li><li><code>/etc/sysconfig</code><br>　　网络配置相关目录</li></ul><h3 id="usr：目录"><a href="#usr：目录" class="headerlink" title="/usr：目录"></a>/usr：目录</h3><p>/usr 文件系统经常很大，因为所有程序安装在这里. /usr 里的所有文件一般来自Linux distribution；本地安装的程序和其他东西在/usr/local下.这样可能在升级新版系统或新distribution时无须重新安装全部程序.</p><ul><li><code>/usr/etc</code><br>　　  存放设置文件</li><li><code>/usr/games</code><br>　　  存放游戏和教学文件</li><li><code>/usr/include</code><br>　　存放C开发工具的头文件</li><li><code>/usr/share</code><br>　　存放结构独立的数据</li><li><code>/usr/bin</code><br>　　几乎所有用户命令.有些命令在/bin 或/usr/local/bin 中.</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://blog.csdn.net/qq_33858250/article/details/81839619" target="_blank" rel="noopener">CentOS7目录结构详细版</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> system </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
             
             <tag> system </tag>
             
